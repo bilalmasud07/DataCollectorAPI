@@ -1,0 +1,58 @@
+2024-07-30 14:12:44,049:INFO:__main__: starting main()
+2024-07-30 14:12:44,050:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\cve.csv has been deleted.
+2024-07-30 14:12:44,052:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\descriptions.csv has been deleted.
+2024-07-30 14:12:44,053:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\cvss_metric.csv has been deleted.
+2024-07-30 14:12:44,054:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\source_type.csv has been deleted.
+2024-07-30 14:12:44,055:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\weaknesses.csv has been deleted.
+2024-07-30 14:12:44,056:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\weaknesses_descriptions.csv has been deleted.
+2024-07-30 14:12:44,057:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\configurations.csv has been deleted.
+2024-07-30 14:12:44,059:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\nodes.csv has been deleted.
+2024-07-30 14:12:44,065:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\cpe_match.csv has been deleted.
+2024-07-30 14:12:58,428:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 14:12:58,561:INFO:utils.csv_writer: Data with 2000 rows added to the csv files
+2024-07-30 14:12:58,572:INFO:utils.csv_writer: Data with 2023 rows added to the csv files
+2024-07-30 14:12:58,582:INFO:utils.csv_writer: Data with 1966 rows added to the csv files
+2024-07-30 14:12:58,587:INFO:utils.csv_writer: Data with 1966 rows added to the csv files
+2024-07-30 14:12:58,592:INFO:utils.csv_writer: Data with 1966 rows added to the csv files
+2024-07-30 14:12:58,598:INFO:utils.csv_writer: Data with 1967 rows added to the csv files
+2024-07-30 14:12:58,603:INFO:utils.csv_writer: Data with 1973 rows added to the csv files
+2024-07-30 14:12:58,609:INFO:utils.csv_writer: Data with 1981 rows added to the csv files
+2024-07-30 14:12:58,638:INFO:utils.csv_writer: Data with 6373 rows added to the csv files
+2024-07-30 14:12:58,638:INFO:__main__: total results : 258532
+2024-07-30 14:12:58,639:INFO:__main__: start_index : 2000
+2024-07-30 14:13:30,338:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 14:13:30,457:INFO:utils.csv_writer: Data with 2000 rows added to the csv files
+2024-07-30 14:13:30,469:INFO:utils.csv_writer: Data with 2021 rows added to the csv files
+2024-07-30 14:13:30,478:INFO:utils.csv_writer: Data with 1997 rows added to the csv files
+2024-07-30 14:13:30,483:INFO:utils.csv_writer: Data with 1997 rows added to the csv files
+2024-07-30 14:13:30,488:INFO:utils.csv_writer: Data with 1997 rows added to the csv files
+2024-07-30 14:13:30,495:INFO:utils.csv_writer: Data with 1997 rows added to the csv files
+2024-07-30 14:13:30,499:INFO:utils.csv_writer: Data with 2088 rows added to the csv files
+2024-07-30 14:13:30,505:INFO:utils.csv_writer: Data with 2099 rows added to the csv files
+2024-07-30 14:13:30,534:INFO:utils.csv_writer: Data with 6753 rows added to the csv files
+2024-07-30 14:13:30,535:INFO:__main__: total results : 258532
+2024-07-30 14:13:30,535:INFO:__main__: start_index : 4000
+2024-07-30 14:14:16,229:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 14:14:16,377:INFO:utils.csv_writer: Data with 2000 rows added to the csv files
+2024-07-30 14:14:16,397:INFO:utils.csv_writer: Data with 2726 rows added to the csv files
+2024-07-30 14:14:16,408:INFO:utils.csv_writer: Data with 1992 rows added to the csv files
+2024-07-30 14:14:16,413:INFO:utils.csv_writer: Data with 1992 rows added to the csv files
+2024-07-30 14:14:16,419:INFO:utils.csv_writer: Data with 1992 rows added to the csv files
+2024-07-30 14:14:16,426:INFO:utils.csv_writer: Data with 1993 rows added to the csv files
+2024-07-30 14:14:16,432:INFO:utils.csv_writer: Data with 2103 rows added to the csv files
+2024-07-30 14:14:16,439:INFO:utils.csv_writer: Data with 2133 rows added to the csv files
+2024-07-30 14:14:16,480:INFO:utils.csv_writer: Data with 10160 rows added to the csv files
+2024-07-30 14:14:16,480:INFO:__main__: total results : 258532
+2024-07-30 14:14:16,481:INFO:__main__: start_index : 6000
+2024-07-30 14:14:57,919:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 14:14:58,083:INFO:utils.csv_writer: Data with 2000 rows added to the csv files
+2024-07-30 14:14:58,102:INFO:utils.csv_writer: Data with 2886 rows added to the csv files
+2024-07-30 14:14:58,111:INFO:utils.csv_writer: Data with 1972 rows added to the csv files
+2024-07-30 14:14:58,116:INFO:utils.csv_writer: Data with 1972 rows added to the csv files
+2024-07-30 14:14:58,121:INFO:utils.csv_writer: Data with 1972 rows added to the csv files
+2024-07-30 14:14:58,126:INFO:utils.csv_writer: Data with 1983 rows added to the csv files
+2024-07-30 14:14:58,133:INFO:utils.csv_writer: Data with 2044 rows added to the csv files
+2024-07-30 14:14:58,138:INFO:utils.csv_writer: Data with 2083 rows added to the csv files
+2024-07-30 14:14:58,182:INFO:utils.csv_writer: Data with 11688 rows added to the csv files
+2024-07-30 14:14:58,182:INFO:__main__: total results : 258532
+2024-07-30 14:14:58,182:INFO:__main__: start_index : 8000

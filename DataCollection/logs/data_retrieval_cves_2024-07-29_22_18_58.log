@@ -1,0 +1,11 @@
+2024-07-29 22:18:58,605:INFO:__main__: starting main()
+2024-07-29 22:18:58,605:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\cve.csv does not exist.
+2024-07-29 22:18:58,606:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\descriptions.csv does not exist.
+2024-07-29 22:18:58,606:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\cvss_metric.csv does not exist.
+2024-07-29 22:18:58,607:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\source_type.csv does not exist.
+2024-07-29 22:18:58,607:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\weaknesses.csv does not exist.
+2024-07-29 22:18:58,610:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\weaknesses_descriptions.csv does not exist.
+2024-07-29 22:18:58,610:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\configurations.csv does not exist.
+2024-07-29 22:18:58,611:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\nodes.csv does not exist.
+2024-07-29 22:18:58,612:INFO:utils.file_manager: The file D:\Study\Job\Cybercube\DataCollection\cve_csv_data\cpe_match.csv does not exist.
+2024-07-29 22:19:11,933:INFO:utils.data_fetcher: Response: <Response [200]>

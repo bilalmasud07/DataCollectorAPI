@@ -1,0 +1,50 @@
+2024-07-30 10:55:29,775:INFO:__main__: starting main()
+2024-07-30 10:56:09,506:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 10:56:10,024:INFO:__main__: total results : 258440
+2024-07-30 10:56:10,025:INFO:__main__: start_index : 230000
+2024-07-30 10:57:02,287:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 10:57:02,818:INFO:__main__: total results : 258440
+2024-07-30 10:57:02,819:INFO:__main__: start_index : 232000
+2024-07-30 10:57:50,656:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 10:57:51,355:INFO:__main__: total results : 258440
+2024-07-30 10:57:51,356:INFO:__main__: start_index : 234000
+2024-07-30 10:58:38,966:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 10:58:39,638:INFO:__main__: total results : 258440
+2024-07-30 10:58:39,639:INFO:__main__: start_index : 236000
+2024-07-30 10:59:24,786:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 10:59:25,296:INFO:__main__: total results : 258440
+2024-07-30 10:59:25,297:INFO:__main__: start_index : 238000
+2024-07-30 10:59:50,266:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 10:59:50,461:INFO:__main__: total results : 258440
+2024-07-30 10:59:50,461:INFO:__main__: start_index : 240000
+2024-07-30 11:00:19,028:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:00:19,294:INFO:__main__: total results : 258440
+2024-07-30 11:00:19,294:INFO:__main__: start_index : 242000
+2024-07-30 11:00:47,077:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:00:47,238:INFO:__main__: total results : 258440
+2024-07-30 11:00:47,239:INFO:__main__: start_index : 244000
+2024-07-30 11:01:11,766:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:01:11,930:INFO:__main__: total results : 258440
+2024-07-30 11:01:11,930:INFO:__main__: start_index : 246000
+2024-07-30 11:01:43,828:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:01:44,021:INFO:__main__: total results : 258440
+2024-07-30 11:01:44,021:INFO:__main__: start_index : 248000
+2024-07-30 11:02:13,669:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:02:13,983:INFO:__main__: total results : 258440
+2024-07-30 11:02:13,984:INFO:__main__: start_index : 250000
+2024-07-30 11:02:49,367:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:02:49,560:INFO:__main__: total results : 258440
+2024-07-30 11:02:49,561:INFO:__main__: start_index : 252000
+2024-07-30 11:03:19,768:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:03:19,984:INFO:__main__: total results : 258440
+2024-07-30 11:03:19,985:INFO:__main__: start_index : 254000
+2024-07-30 11:04:12,330:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:04:12,626:INFO:__main__: total results : 258440
+2024-07-30 11:04:12,627:INFO:__main__: start_index : 256000
+2024-07-30 11:04:47,450:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:04:47,683:INFO:__main__: total results : 258440
+2024-07-30 11:04:47,683:INFO:__main__: start_index : 258000
+2024-07-30 11:04:58,278:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 11:04:58,313:INFO:__main__: total results : 258440
+2024-07-30 11:04:58,314:INFO:__main__: start_index : 260000
+2024-07-30 11:05:00,318:INFO:__main__: finished main()

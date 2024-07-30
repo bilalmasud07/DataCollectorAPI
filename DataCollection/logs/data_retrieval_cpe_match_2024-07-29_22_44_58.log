@@ -1,0 +1,48 @@
+2024-07-29 22:44:58,294:INFO:__main__: starting main()
+2024-07-29 22:44:58,295:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cpematch_csv_data\matchString.csv has been deleted.
+2024-07-29 22:44:58,296:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cpematch_csv_data\matches.csv has been deleted.
+2024-07-29 22:45:00,045:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:45:00,069:INFO:__main__: total results : 534417
+2024-07-29 22:45:00,069:INFO:__main__: start_index : 10000
+2024-07-29 22:45:07,905:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:45:07,934:INFO:__main__: total results : 534417
+2024-07-29 22:45:07,936:INFO:__main__: start_index : 20000
+2024-07-29 22:45:15,836:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:45:15,864:INFO:__main__: total results : 534417
+2024-07-29 22:45:15,865:INFO:__main__: start_index : 30000
+2024-07-29 22:45:24,695:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:45:24,754:INFO:__main__: total results : 534417
+2024-07-29 22:45:24,754:INFO:__main__: start_index : 40000
+2024-07-29 22:45:32,815:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:45:32,844:INFO:__main__: total results : 534417
+2024-07-29 22:45:32,844:INFO:__main__: start_index : 50000
+2024-07-29 22:45:40,315:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:45:40,335:INFO:__main__: total results : 534417
+2024-07-29 22:45:40,335:INFO:__main__: start_index : 60000
+2024-07-29 22:45:49,506:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:45:49,622:INFO:__main__: total results : 534417
+2024-07-29 22:45:49,622:INFO:__main__: start_index : 70000
+2024-07-29 22:45:57,093:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:45:57,113:INFO:__main__: total results : 534423
+2024-07-29 22:45:57,113:INFO:__main__: start_index : 80000
+2024-07-29 22:46:04,975:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:46:05,002:INFO:__main__: total results : 534423
+2024-07-29 22:46:05,002:INFO:__main__: start_index : 90000
+2024-07-29 22:46:14,046:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:46:14,108:INFO:__main__: total results : 534423
+2024-07-29 22:46:14,108:INFO:__main__: start_index : 100000
+2024-07-29 22:46:23,655:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:46:23,731:INFO:__main__: total results : 534423
+2024-07-29 22:46:23,731:INFO:__main__: start_index : 110000
+2024-07-29 22:46:31,539:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:46:31,568:INFO:__main__: total results : 534423
+2024-07-29 22:46:31,569:INFO:__main__: start_index : 120000
+2024-07-29 22:46:39,929:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:46:39,966:INFO:__main__: total results : 534423
+2024-07-29 22:46:39,966:INFO:__main__: start_index : 130000
+2024-07-29 22:46:49,496:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:46:49,569:INFO:__main__: total results : 534423
+2024-07-29 22:46:49,570:INFO:__main__: start_index : 140000
+2024-07-29 22:46:57,686:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:46:57,727:INFO:__main__: total results : 534423
+2024-07-29 22:46:57,728:INFO:__main__: start_index : 150000

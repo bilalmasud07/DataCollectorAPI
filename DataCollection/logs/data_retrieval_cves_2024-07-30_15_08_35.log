@@ -1,0 +1,531 @@
+2024-07-30 15:08:35,354:INFO:__main__: starting main()
+2024-07-30 15:08:35,356:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\cve.csv has been deleted.
+2024-07-30 15:08:35,359:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\descriptions.csv has been deleted.
+2024-07-30 15:08:35,360:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\cvss_metric.csv has been deleted.
+2024-07-30 15:08:35,361:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\source_type.csv has been deleted.
+2024-07-30 15:08:35,362:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\weaknesses.csv has been deleted.
+2024-07-30 15:08:35,363:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\weaknesses_descriptions.csv has been deleted.
+2024-07-30 15:08:35,364:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\configurations.csv has been deleted.
+2024-07-30 15:08:35,365:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\nodes.csv has been deleted.
+2024-07-30 15:08:35,379:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollectorAPI\DataCollection\cve_csv_data\cpe_match.csv has been deleted.
+2024-07-30 15:08:49,903:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:08:50,101:INFO:__main__: Data added to the csv files
+2024-07-30 15:08:50,102:INFO:__main__: total results : 258532
+2024-07-30 15:08:50,102:INFO:__main__: start_index : 2000
+2024-07-30 15:09:25,809:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:09:25,984:INFO:__main__: Data added to the csv files
+2024-07-30 15:09:25,985:INFO:__main__: total results : 258532
+2024-07-30 15:09:25,985:INFO:__main__: start_index : 4000
+2024-07-30 15:10:08,249:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:10:08,466:INFO:__main__: Data added to the csv files
+2024-07-30 15:10:08,466:INFO:__main__: total results : 258532
+2024-07-30 15:10:08,467:INFO:__main__: start_index : 6000
+2024-07-30 15:10:51,950:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:10:52,177:INFO:__main__: Data added to the csv files
+2024-07-30 15:10:52,178:INFO:__main__: total results : 258532
+2024-07-30 15:10:52,178:INFO:__main__: start_index : 8000
+2024-07-30 15:11:39,799:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:11:40,107:INFO:__main__: Data added to the csv files
+2024-07-30 15:11:40,108:INFO:__main__: total results : 258532
+2024-07-30 15:11:40,108:INFO:__main__: start_index : 10000
+2024-07-30 15:12:29,090:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:12:29,378:INFO:__main__: Data added to the csv files
+2024-07-30 15:12:29,378:INFO:__main__: total results : 258532
+2024-07-30 15:12:29,379:INFO:__main__: start_index : 12000
+2024-07-30 15:13:14,399:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:13:14,645:INFO:__main__: Data added to the csv files
+2024-07-30 15:13:14,646:INFO:__main__: total results : 258532
+2024-07-30 15:13:14,646:INFO:__main__: start_index : 14000
+2024-07-30 15:13:57,350:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:13:57,618:INFO:__main__: Data added to the csv files
+2024-07-30 15:13:57,619:INFO:__main__: total results : 258532
+2024-07-30 15:13:57,619:INFO:__main__: start_index : 16000
+2024-07-30 15:14:50,270:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:14:50,521:INFO:__main__: Data added to the csv files
+2024-07-30 15:14:50,522:INFO:__main__: total results : 258532
+2024-07-30 15:14:50,522:INFO:__main__: start_index : 18000
+2024-07-30 15:15:43,780:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:15:44,044:INFO:__main__: Data added to the csv files
+2024-07-30 15:15:44,045:INFO:__main__: total results : 258532
+2024-07-30 15:15:44,045:INFO:__main__: start_index : 20000
+2024-07-30 15:16:33,321:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:16:33,585:INFO:__main__: Data added to the csv files
+2024-07-30 15:16:33,585:INFO:__main__: total results : 258533
+2024-07-30 15:16:33,586:INFO:__main__: start_index : 22000
+2024-07-30 15:17:25,940:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:17:26,236:INFO:__main__: Data added to the csv files
+2024-07-30 15:17:26,236:INFO:__main__: total results : 258533
+2024-07-30 15:17:26,237:INFO:__main__: start_index : 24000
+2024-07-30 15:18:13,970:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:18:14,234:INFO:__main__: Data added to the csv files
+2024-07-30 15:18:14,235:INFO:__main__: total results : 258533
+2024-07-30 15:18:14,235:INFO:__main__: start_index : 26000
+2024-07-30 15:19:05,641:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:19:05,913:INFO:__main__: Data added to the csv files
+2024-07-30 15:19:05,913:INFO:__main__: total results : 258533
+2024-07-30 15:19:05,914:INFO:__main__: start_index : 28000
+2024-07-30 15:19:59,042:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:19:59,315:INFO:__main__: Data added to the csv files
+2024-07-30 15:19:59,315:INFO:__main__: total results : 258533
+2024-07-30 15:19:59,316:INFO:__main__: start_index : 30000
+2024-07-30 15:20:58,001:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:20:58,331:INFO:__main__: Data added to the csv files
+2024-07-30 15:20:58,331:INFO:__main__: total results : 258533
+2024-07-30 15:20:58,332:INFO:__main__: start_index : 32000
+2024-07-30 15:22:03,893:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:22:04,276:INFO:__main__: Data added to the csv files
+2024-07-30 15:22:04,277:INFO:__main__: total results : 258533
+2024-07-30 15:22:04,277:INFO:__main__: start_index : 34000
+2024-07-30 15:23:08,423:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:23:08,823:INFO:__main__: Data added to the csv files
+2024-07-30 15:23:08,823:INFO:__main__: total results : 258533
+2024-07-30 15:23:08,824:INFO:__main__: start_index : 36000
+2024-07-30 15:24:27,353:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:24:27,879:INFO:__main__: Data added to the csv files
+2024-07-30 15:24:27,879:INFO:__main__: total results : 258533
+2024-07-30 15:24:27,879:INFO:__main__: start_index : 38000
+2024-07-30 15:25:47,100:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:25:47,687:INFO:__main__: Data added to the csv files
+2024-07-30 15:25:47,687:INFO:__main__: total results : 258533
+2024-07-30 15:25:47,688:INFO:__main__: start_index : 40000
+2024-07-30 15:26:58,513:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:26:59,000:INFO:__main__: Data added to the csv files
+2024-07-30 15:26:59,000:INFO:__main__: total results : 258533
+2024-07-30 15:26:59,000:INFO:__main__: start_index : 42000
+2024-07-30 15:28:15,644:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:28:16,236:INFO:__main__: Data added to the csv files
+2024-07-30 15:28:16,237:INFO:__main__: total results : 258533
+2024-07-30 15:28:16,237:INFO:__main__: start_index : 44000
+2024-07-30 15:29:58,105:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:29:58,925:INFO:__main__: Data added to the csv files
+2024-07-30 15:29:58,926:INFO:__main__: total results : 258533
+2024-07-30 15:29:58,926:INFO:__main__: start_index : 46000
+2024-07-30 15:31:36,846:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:31:37,762:INFO:__main__: Data added to the csv files
+2024-07-30 15:31:37,762:INFO:__main__: total results : 258533
+2024-07-30 15:31:37,762:INFO:__main__: start_index : 48000
+2024-07-30 15:32:59,334:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:32:59,909:INFO:__main__: Data added to the csv files
+2024-07-30 15:32:59,910:INFO:__main__: total results : 258533
+2024-07-30 15:32:59,910:INFO:__main__: start_index : 50000
+2024-07-30 15:34:25,966:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:34:26,598:INFO:__main__: Data added to the csv files
+2024-07-30 15:34:26,599:INFO:__main__: total results : 258533
+2024-07-30 15:34:26,599:INFO:__main__: start_index : 52000
+2024-07-30 15:35:56,286:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:35:56,908:INFO:__main__: Data added to the csv files
+2024-07-30 15:35:56,909:INFO:__main__: total results : 258533
+2024-07-30 15:35:56,909:INFO:__main__: start_index : 54000
+2024-07-30 15:37:31,381:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:37:32,265:INFO:__main__: Data added to the csv files
+2024-07-30 15:37:32,265:INFO:__main__: total results : 258533
+2024-07-30 15:37:32,266:INFO:__main__: start_index : 56000
+2024-07-30 15:39:07,349:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:39:08,105:INFO:__main__: Data added to the csv files
+2024-07-30 15:39:08,105:INFO:__main__: total results : 258533
+2024-07-30 15:39:08,106:INFO:__main__: start_index : 58000
+2024-07-30 15:40:30,458:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:40:31,216:INFO:__main__: Data added to the csv files
+2024-07-30 15:40:31,216:INFO:__main__: total results : 258533
+2024-07-30 15:40:31,217:INFO:__main__: start_index : 60000
+2024-07-30 15:41:33,367:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:41:33,994:INFO:__main__: Data added to the csv files
+2024-07-30 15:41:33,994:INFO:__main__: total results : 258533
+2024-07-30 15:41:33,995:INFO:__main__: start_index : 62000
+2024-07-30 15:42:34,248:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:42:34,760:INFO:__main__: Data added to the csv files
+2024-07-30 15:42:34,760:INFO:__main__: total results : 258533
+2024-07-30 15:42:34,761:INFO:__main__: start_index : 64000
+2024-07-30 15:43:22,827:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:43:23,216:INFO:__main__: Data added to the csv files
+2024-07-30 15:43:23,217:INFO:__main__: total results : 258533
+2024-07-30 15:43:23,217:INFO:__main__: start_index : 66000
+2024-07-30 15:44:17,448:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:44:17,860:INFO:__main__: Data added to the csv files
+2024-07-30 15:44:17,861:INFO:__main__: total results : 258533
+2024-07-30 15:44:17,861:INFO:__main__: start_index : 68000
+2024-07-30 15:45:13,727:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:45:14,192:INFO:__main__: Data added to the csv files
+2024-07-30 15:45:14,192:INFO:__main__: total results : 258533
+2024-07-30 15:45:14,193:INFO:__main__: start_index : 70000
+2024-07-30 15:46:05,588:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:46:05,992:INFO:__main__: Data added to the csv files
+2024-07-30 15:46:05,992:INFO:__main__: total results : 258533
+2024-07-30 15:46:05,993:INFO:__main__: start_index : 72000
+2024-07-30 15:47:02,138:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:47:02,761:INFO:__main__: Data added to the csv files
+2024-07-30 15:47:02,762:INFO:__main__: total results : 258533
+2024-07-30 15:47:02,762:INFO:__main__: start_index : 74000
+2024-07-30 15:48:12,709:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:48:13,247:INFO:__main__: Data added to the csv files
+2024-07-30 15:48:13,247:INFO:__main__: total results : 258533
+2024-07-30 15:48:13,248:INFO:__main__: start_index : 76000
+2024-07-30 15:49:26,349:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:49:26,872:INFO:__main__: Data added to the csv files
+2024-07-30 15:49:26,872:INFO:__main__: total results : 258533
+2024-07-30 15:49:26,873:INFO:__main__: start_index : 78000
+2024-07-30 15:50:31,021:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:50:31,733:INFO:__main__: Data added to the csv files
+2024-07-30 15:50:31,734:INFO:__main__: total results : 258533
+2024-07-30 15:50:31,734:INFO:__main__: start_index : 80000
+2024-07-30 15:51:29,667:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:51:30,248:INFO:__main__: Data added to the csv files
+2024-07-30 15:51:30,249:INFO:__main__: total results : 258533
+2024-07-30 15:51:30,249:INFO:__main__: start_index : 82000
+2024-07-30 15:52:20,979:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:52:21,324:INFO:__main__: Data added to the csv files
+2024-07-30 15:52:21,325:INFO:__main__: total results : 258533
+2024-07-30 15:52:21,325:INFO:__main__: start_index : 84000
+2024-07-30 15:53:15,961:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:53:16,365:INFO:__main__: Data added to the csv files
+2024-07-30 15:53:16,366:INFO:__main__: total results : 258533
+2024-07-30 15:53:16,366:INFO:__main__: start_index : 86000
+2024-07-30 15:53:35,477:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:53:35,610:INFO:__main__: Data added to the csv files
+2024-07-30 15:53:35,610:INFO:__main__: total results : 258533
+2024-07-30 15:53:35,611:INFO:__main__: start_index : 88000
+2024-07-30 15:54:02,618:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:54:02,746:INFO:__main__: Data added to the csv files
+2024-07-30 15:54:02,746:INFO:__main__: total results : 258533
+2024-07-30 15:54:02,747:INFO:__main__: start_index : 90000
+2024-07-30 15:54:58,170:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:54:58,520:INFO:__main__: Data added to the csv files
+2024-07-30 15:54:58,520:INFO:__main__: total results : 258533
+2024-07-30 15:54:58,521:INFO:__main__: start_index : 92000
+2024-07-30 15:55:59,681:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:56:00,128:INFO:__main__: Data added to the csv files
+2024-07-30 15:56:00,128:INFO:__main__: total results : 258533
+2024-07-30 15:56:00,129:INFO:__main__: start_index : 94000
+2024-07-30 15:56:58,200:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:56:58,590:INFO:__main__: Data added to the csv files
+2024-07-30 15:56:58,590:INFO:__main__: total results : 258533
+2024-07-30 15:56:58,591:INFO:__main__: start_index : 96000
+2024-07-30 15:58:03,331:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:58:03,723:INFO:__main__: Data added to the csv files
+2024-07-30 15:58:03,723:INFO:__main__: total results : 258533
+2024-07-30 15:58:03,723:INFO:__main__: start_index : 98000
+2024-07-30 15:58:54,882:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:58:55,358:INFO:__main__: Data added to the csv files
+2024-07-30 15:58:55,359:INFO:__main__: total results : 258533
+2024-07-30 15:58:55,359:INFO:__main__: start_index : 100000
+2024-07-30 15:59:48,252:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 15:59:48,676:INFO:__main__: Data added to the csv files
+2024-07-30 15:59:48,676:INFO:__main__: total results : 258533
+2024-07-30 15:59:48,676:INFO:__main__: start_index : 102000
+2024-07-30 16:00:22,510:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:00:22,736:INFO:__main__: Data added to the csv files
+2024-07-30 16:00:22,737:INFO:__main__: total results : 258533
+2024-07-30 16:00:22,737:INFO:__main__: start_index : 104000
+2024-07-30 16:01:30,673:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:01:31,255:INFO:__main__: Data added to the csv files
+2024-07-30 16:01:31,256:INFO:__main__: total results : 258533
+2024-07-30 16:01:31,256:INFO:__main__: start_index : 106000
+2024-07-30 16:02:21,521:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:02:21,930:INFO:__main__: Data added to the csv files
+2024-07-30 16:02:21,932:INFO:__main__: total results : 258533
+2024-07-30 16:02:21,932:INFO:__main__: start_index : 108000
+2024-07-30 16:03:28,822:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:03:29,381:INFO:__main__: Data added to the csv files
+2024-07-30 16:03:29,382:INFO:__main__: total results : 258533
+2024-07-30 16:03:29,382:INFO:__main__: start_index : 110000
+2024-07-30 16:04:23,663:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:04:24,087:INFO:__main__: Data added to the csv files
+2024-07-30 16:04:24,088:INFO:__main__: total results : 258533
+2024-07-30 16:04:24,088:INFO:__main__: start_index : 112000
+2024-07-30 16:05:19,542:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:05:19,970:INFO:__main__: Data added to the csv files
+2024-07-30 16:05:19,971:INFO:__main__: total results : 258533
+2024-07-30 16:05:19,971:INFO:__main__: start_index : 114000
+2024-07-30 16:06:17,063:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:06:17,460:INFO:__main__: Data added to the csv files
+2024-07-30 16:06:17,460:INFO:__main__: total results : 258533
+2024-07-30 16:06:17,461:INFO:__main__: start_index : 116000
+2024-07-30 16:07:06,443:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:07:06,824:INFO:__main__: Data added to the csv files
+2024-07-30 16:07:06,825:INFO:__main__: total results : 258533
+2024-07-30 16:07:06,825:INFO:__main__: start_index : 118000
+2024-07-30 16:07:49,544:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:07:49,856:INFO:__main__: Data added to the csv files
+2024-07-30 16:07:49,856:INFO:__main__: total results : 258533
+2024-07-30 16:07:49,857:INFO:__main__: start_index : 120000
+2024-07-30 16:08:57,313:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:08:57,738:INFO:__main__: Data added to the csv files
+2024-07-30 16:08:57,738:INFO:__main__: total results : 258533
+2024-07-30 16:08:57,739:INFO:__main__: start_index : 122000
+2024-07-30 16:10:02,744:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:10:03,288:INFO:__main__: Data added to the csv files
+2024-07-30 16:10:03,289:INFO:__main__: total results : 258533
+2024-07-30 16:10:03,289:INFO:__main__: start_index : 124000
+2024-07-30 16:11:01,524:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:11:01,972:INFO:__main__: Data added to the csv files
+2024-07-30 16:11:01,972:INFO:__main__: total results : 258533
+2024-07-30 16:11:01,973:INFO:__main__: start_index : 126000
+2024-07-30 16:11:56,463:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:11:56,928:INFO:__main__: Data added to the csv files
+2024-07-30 16:11:56,928:INFO:__main__: total results : 258533
+2024-07-30 16:11:56,929:INFO:__main__: start_index : 128000
+2024-07-30 16:12:48,715:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:12:49,102:INFO:__main__: Data added to the csv files
+2024-07-30 16:12:49,102:INFO:__main__: total results : 258533
+2024-07-30 16:12:49,103:INFO:__main__: start_index : 130000
+2024-07-30 16:13:48,834:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:13:49,296:INFO:__main__: Data added to the csv files
+2024-07-30 16:13:49,297:INFO:__main__: total results : 258533
+2024-07-30 16:13:49,297:INFO:__main__: start_index : 132000
+2024-07-30 16:14:55,605:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:14:56,221:INFO:__main__: Data added to the csv files
+2024-07-30 16:14:56,222:INFO:__main__: total results : 258533
+2024-07-30 16:14:56,222:INFO:__main__: start_index : 134000
+2024-07-30 16:15:50,105:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:15:50,590:INFO:__main__: Data added to the csv files
+2024-07-30 16:15:50,590:INFO:__main__: total results : 258533
+2024-07-30 16:15:50,591:INFO:__main__: start_index : 136000
+2024-07-30 16:16:49,995:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:16:50,432:INFO:__main__: Data added to the csv files
+2024-07-30 16:16:50,432:INFO:__main__: total results : 258534
+2024-07-30 16:16:50,433:INFO:__main__: start_index : 138000
+2024-07-30 16:17:46,085:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:17:46,591:INFO:__main__: Data added to the csv files
+2024-07-30 16:17:46,591:INFO:__main__: total results : 258534
+2024-07-30 16:17:46,592:INFO:__main__: start_index : 140000
+2024-07-30 16:19:07,757:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:19:08,218:INFO:__main__: Data added to the csv files
+2024-07-30 16:19:08,218:INFO:__main__: total results : 258534
+2024-07-30 16:19:08,219:INFO:__main__: start_index : 142000
+2024-07-30 16:20:26,837:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:20:27,463:INFO:__main__: Data added to the csv files
+2024-07-30 16:20:27,464:INFO:__main__: total results : 258534
+2024-07-30 16:20:27,464:INFO:__main__: start_index : 144000
+2024-07-30 16:21:37,577:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:21:38,205:INFO:__main__: Data added to the csv files
+2024-07-30 16:21:38,205:INFO:__main__: total results : 258534
+2024-07-30 16:21:38,206:INFO:__main__: start_index : 146000
+2024-07-30 16:22:38,387:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:22:38,853:INFO:__main__: Data added to the csv files
+2024-07-30 16:22:38,854:INFO:__main__: total results : 258534
+2024-07-30 16:22:38,854:INFO:__main__: start_index : 148000
+2024-07-30 16:23:48,568:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:23:49,316:INFO:__main__: Data added to the csv files
+2024-07-30 16:23:49,316:INFO:__main__: total results : 258534
+2024-07-30 16:23:49,317:INFO:__main__: start_index : 150000
+2024-07-30 16:24:46,747:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:24:47,212:INFO:__main__: Data added to the csv files
+2024-07-30 16:24:47,213:INFO:__main__: total results : 258534
+2024-07-30 16:24:47,213:INFO:__main__: start_index : 152000
+2024-07-30 16:25:45,087:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:25:45,829:INFO:__main__: Data added to the csv files
+2024-07-30 16:25:45,829:INFO:__main__: total results : 258534
+2024-07-30 16:25:45,829:INFO:__main__: start_index : 154000
+2024-07-30 16:26:37,657:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:26:38,037:INFO:__main__: Data added to the csv files
+2024-07-30 16:26:38,038:INFO:__main__: total results : 258534
+2024-07-30 16:26:38,038:INFO:__main__: start_index : 156000
+2024-07-30 16:27:40,678:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:27:41,238:INFO:__main__: Data added to the csv files
+2024-07-30 16:27:41,238:INFO:__main__: total results : 258534
+2024-07-30 16:27:41,238:INFO:__main__: start_index : 158000
+2024-07-30 16:29:16,050:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:29:17,183:INFO:__main__: Data added to the csv files
+2024-07-30 16:29:17,183:INFO:__main__: total results : 258534
+2024-07-30 16:29:17,183:INFO:__main__: start_index : 160000
+2024-07-30 16:30:28,000:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:30:28,769:INFO:__main__: Data added to the csv files
+2024-07-30 16:30:28,769:INFO:__main__: total results : 258534
+2024-07-30 16:30:28,770:INFO:__main__: start_index : 162000
+2024-07-30 16:31:39,060:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:31:40,034:INFO:__main__: Data added to the csv files
+2024-07-30 16:31:40,035:INFO:__main__: total results : 258534
+2024-07-30 16:31:40,035:INFO:__main__: start_index : 164000
+2024-07-30 16:32:51,110:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:32:51,936:INFO:__main__: Data added to the csv files
+2024-07-30 16:32:51,936:INFO:__main__: total results : 258534
+2024-07-30 16:32:51,936:INFO:__main__: start_index : 166000
+2024-07-30 16:34:02,891:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:34:03,445:INFO:__main__: Data added to the csv files
+2024-07-30 16:34:03,445:INFO:__main__: total results : 258534
+2024-07-30 16:34:03,446:INFO:__main__: start_index : 168000
+2024-07-30 16:35:00,089:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:35:00,609:INFO:__main__: Data added to the csv files
+2024-07-30 16:35:00,610:INFO:__main__: total results : 258534
+2024-07-30 16:35:00,610:INFO:__main__: start_index : 170000
+2024-07-30 16:36:07,380:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:36:07,991:INFO:__main__: Data added to the csv files
+2024-07-30 16:36:07,991:INFO:__main__: total results : 258534
+2024-07-30 16:36:07,992:INFO:__main__: start_index : 172000
+2024-07-30 16:37:39,930:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:37:40,704:INFO:__main__: Data added to the csv files
+2024-07-30 16:37:40,705:INFO:__main__: total results : 258534
+2024-07-30 16:37:40,705:INFO:__main__: start_index : 174000
+2024-07-30 16:38:41,470:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:38:41,955:INFO:__main__: Data added to the csv files
+2024-07-30 16:38:41,955:INFO:__main__: total results : 258534
+2024-07-30 16:38:41,956:INFO:__main__: start_index : 176000
+2024-07-30 16:39:41,032:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:39:41,663:INFO:__main__: Data added to the csv files
+2024-07-30 16:39:41,664:INFO:__main__: total results : 258534
+2024-07-30 16:39:41,664:INFO:__main__: start_index : 178000
+2024-07-30 16:40:50,801:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:40:51,364:INFO:__main__: Data added to the csv files
+2024-07-30 16:40:51,364:INFO:__main__: total results : 258534
+2024-07-30 16:40:51,365:INFO:__main__: start_index : 180000
+2024-07-30 16:42:11,897:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:42:12,670:INFO:__main__: Data added to the csv files
+2024-07-30 16:42:12,670:INFO:__main__: total results : 258534
+2024-07-30 16:42:12,671:INFO:__main__: start_index : 182000
+2024-07-30 16:43:06,882:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:43:07,359:INFO:__main__: Data added to the csv files
+2024-07-30 16:43:07,359:INFO:__main__: total results : 258534
+2024-07-30 16:43:07,360:INFO:__main__: start_index : 184000
+2024-07-30 16:44:08,874:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:44:09,403:INFO:__main__: Data added to the csv files
+2024-07-30 16:44:09,403:INFO:__main__: total results : 258534
+2024-07-30 16:44:09,404:INFO:__main__: start_index : 186000
+2024-07-30 16:45:20,262:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:45:20,991:INFO:__main__: Data added to the csv files
+2024-07-30 16:45:20,992:INFO:__main__: total results : 258534
+2024-07-30 16:45:20,992:INFO:__main__: start_index : 188000
+2024-07-30 16:46:26,791:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:46:27,425:INFO:__main__: Data added to the csv files
+2024-07-30 16:46:27,425:INFO:__main__: total results : 258534
+2024-07-30 16:46:27,426:INFO:__main__: start_index : 190000
+2024-07-30 16:47:15,432:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:47:15,842:INFO:__main__: Data added to the csv files
+2024-07-30 16:47:15,842:INFO:__main__: total results : 258534
+2024-07-30 16:47:15,842:INFO:__main__: start_index : 192000
+2024-07-30 16:48:01,311:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:48:01,684:INFO:__main__: Data added to the csv files
+2024-07-30 16:48:01,685:INFO:__main__: total results : 258534
+2024-07-30 16:48:01,685:INFO:__main__: start_index : 194000
+2024-07-30 16:49:04,023:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:49:04,599:INFO:__main__: Data added to the csv files
+2024-07-30 16:49:04,599:INFO:__main__: total results : 258534
+2024-07-30 16:49:04,600:INFO:__main__: start_index : 196000
+2024-07-30 16:50:03,853:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:50:04,405:INFO:__main__: Data added to the csv files
+2024-07-30 16:50:04,406:INFO:__main__: total results : 258534
+2024-07-30 16:50:04,406:INFO:__main__: start_index : 198000
+2024-07-30 16:51:08,053:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:51:08,681:INFO:__main__: Data added to the csv files
+2024-07-30 16:51:08,681:INFO:__main__: total results : 258534
+2024-07-30 16:51:08,682:INFO:__main__: start_index : 200000
+2024-07-30 16:52:08,383:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:52:08,941:INFO:__main__: Data added to the csv files
+2024-07-30 16:52:08,941:INFO:__main__: total results : 258534
+2024-07-30 16:52:08,941:INFO:__main__: start_index : 202000
+2024-07-30 16:52:50,812:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:52:51,179:INFO:__main__: Data added to the csv files
+2024-07-30 16:52:51,180:INFO:__main__: total results : 258534
+2024-07-30 16:52:51,180:INFO:__main__: start_index : 204000
+2024-07-30 16:53:59,304:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:53:59,828:INFO:__main__: Data added to the csv files
+2024-07-30 16:53:59,828:INFO:__main__: total results : 258534
+2024-07-30 16:53:59,828:INFO:__main__: start_index : 206000
+2024-07-30 16:55:04,847:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:55:05,590:INFO:__main__: Data added to the csv files
+2024-07-30 16:55:05,591:INFO:__main__: total results : 258534
+2024-07-30 16:55:05,591:INFO:__main__: start_index : 208000
+2024-07-30 16:55:53,975:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:55:54,520:INFO:__main__: Data added to the csv files
+2024-07-30 16:55:54,520:INFO:__main__: total results : 258534
+2024-07-30 16:55:54,520:INFO:__main__: start_index : 210000
+2024-07-30 16:56:37,732:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:56:38,067:INFO:__main__: Data added to the csv files
+2024-07-30 16:56:38,068:INFO:__main__: total results : 258534
+2024-07-30 16:56:38,068:INFO:__main__: start_index : 212000
+2024-07-30 16:57:33,645:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:57:34,183:INFO:__main__: Data added to the csv files
+2024-07-30 16:57:34,183:INFO:__main__: total results : 258534
+2024-07-30 16:57:34,184:INFO:__main__: start_index : 214000
+2024-07-30 16:58:30,895:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:58:31,572:INFO:__main__: Data added to the csv files
+2024-07-30 16:58:31,573:INFO:__main__: total results : 258534
+2024-07-30 16:58:31,573:INFO:__main__: start_index : 216000
+2024-07-30 16:59:46,456:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 16:59:47,307:INFO:__main__: Data added to the csv files
+2024-07-30 16:59:47,308:INFO:__main__: total results : 258534
+2024-07-30 16:59:47,308:INFO:__main__: start_index : 218000
+2024-07-30 17:01:16,445:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:01:17,508:INFO:__main__: Data added to the csv files
+2024-07-30 17:01:17,508:INFO:__main__: total results : 258534
+2024-07-30 17:01:17,509:INFO:__main__: start_index : 220000
+2024-07-30 17:02:09,867:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:02:10,674:INFO:__main__: Data added to the csv files
+2024-07-30 17:02:10,675:INFO:__main__: total results : 258534
+2024-07-30 17:02:10,675:INFO:__main__: start_index : 222000
+2024-07-30 17:03:10,735:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:03:11,401:INFO:__main__: Data added to the csv files
+2024-07-30 17:03:11,401:INFO:__main__: total results : 258534
+2024-07-30 17:03:11,402:INFO:__main__: start_index : 224000
+2024-07-30 17:04:02,575:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:04:03,087:INFO:__main__: Data added to the csv files
+2024-07-30 17:04:03,088:INFO:__main__: total results : 258534
+2024-07-30 17:04:03,088:INFO:__main__: start_index : 226000
+2024-07-30 17:05:06,546:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:05:07,145:INFO:__main__: Data added to the csv files
+2024-07-30 17:05:07,145:INFO:__main__: total results : 258534
+2024-07-30 17:05:07,146:INFO:__main__: start_index : 228000
+2024-07-30 17:06:02,946:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:06:03,512:INFO:__main__: Data added to the csv files
+2024-07-30 17:06:03,512:INFO:__main__: total results : 258534
+2024-07-30 17:06:03,512:INFO:__main__: start_index : 230000
+2024-07-30 17:07:06,041:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:07:06,769:INFO:__main__: Data added to the csv files
+2024-07-30 17:07:06,770:INFO:__main__: total results : 258534
+2024-07-30 17:07:06,770:INFO:__main__: start_index : 232000
+2024-07-30 17:08:08,249:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:08:08,981:INFO:__main__: Data added to the csv files
+2024-07-30 17:08:08,982:INFO:__main__: total results : 258534
+2024-07-30 17:08:08,983:INFO:__main__: start_index : 234000
+2024-07-30 17:09:07,007:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:09:07,592:INFO:__main__: Data added to the csv files
+2024-07-30 17:09:07,593:INFO:__main__: total results : 258534
+2024-07-30 17:09:07,593:INFO:__main__: start_index : 236000
+2024-07-30 17:09:59,508:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:10:00,012:INFO:__main__: Data added to the csv files
+2024-07-30 17:10:00,013:INFO:__main__: total results : 258534
+2024-07-30 17:10:00,013:INFO:__main__: start_index : 238000
+2024-07-30 17:10:59,566:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:10:59,799:INFO:__main__: Data added to the csv files
+2024-07-30 17:10:59,800:INFO:__main__: total results : 258534
+2024-07-30 17:10:59,800:INFO:__main__: start_index : 240000
+2024-07-30 17:11:53,006:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:11:53,186:INFO:__main__: Data added to the csv files
+2024-07-30 17:11:53,187:INFO:__main__: total results : 258534
+2024-07-30 17:11:53,187:INFO:__main__: start_index : 242000
+2024-07-30 17:12:37,626:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:12:37,801:INFO:__main__: Data added to the csv files
+2024-07-30 17:12:37,802:INFO:__main__: total results : 258534
+2024-07-30 17:12:37,802:INFO:__main__: start_index : 244000
+2024-07-30 17:13:41,236:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:13:41,392:INFO:__main__: Data added to the csv files
+2024-07-30 17:13:41,393:INFO:__main__: total results : 258534
+2024-07-30 17:13:41,393:INFO:__main__: start_index : 246000
+2024-07-30 17:14:50,527:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:14:50,725:INFO:__main__: Data added to the csv files
+2024-07-30 17:14:50,726:INFO:__main__: total results : 258534
+2024-07-30 17:14:50,726:INFO:__main__: start_index : 248000
+2024-07-30 17:15:46,977:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:15:47,152:INFO:__main__: Data added to the csv files
+2024-07-30 17:15:47,152:INFO:__main__: total results : 258534
+2024-07-30 17:15:47,154:INFO:__main__: start_index : 250000
+2024-07-30 17:16:53,859:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:16:54,053:INFO:__main__: Data added to the csv files
+2024-07-30 17:16:54,054:INFO:__main__: total results : 258536
+2024-07-30 17:16:54,054:INFO:__main__: start_index : 252000
+2024-07-30 17:17:50,722:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:17:50,963:INFO:__main__: Data added to the csv files
+2024-07-30 17:17:50,964:INFO:__main__: total results : 258536
+2024-07-30 17:17:50,964:INFO:__main__: start_index : 254000
+2024-07-30 17:18:50,218:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:18:50,544:INFO:__main__: Data added to the csv files
+2024-07-30 17:18:50,545:INFO:__main__: total results : 258536
+2024-07-30 17:18:50,545:INFO:__main__: start_index : 256000
+2024-07-30 17:19:26,918:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:19:27,133:INFO:__main__: Data added to the csv files
+2024-07-30 17:19:27,134:INFO:__main__: total results : 258536
+2024-07-30 17:19:27,134:INFO:__main__: start_index : 258000
+2024-07-30 17:19:46,497:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-30 17:19:46,547:INFO:__main__: Data added to the csv files
+2024-07-30 17:19:46,547:INFO:__main__: total results : 258536
+2024-07-30 17:19:46,548:INFO:__main__: start_index : 260000
+2024-07-30 17:19:52,553:INFO:__main__: finished main()

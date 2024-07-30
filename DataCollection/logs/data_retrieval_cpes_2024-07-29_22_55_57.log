@@ -1,0 +1,15 @@
+2024-07-29 22:55:57,091:INFO:__main__: starting main()
+2024-07-29 22:55:57,095:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cpe_csv_data\cpe.csv has been deleted.
+2024-07-29 22:55:57,102:INFO:utils.file_manager: The existing file D:\Study\Job\Cybercube\DataCollection\cpe_csv_data\titles.csv has been deleted.
+2024-07-29 22:56:05,796:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:56:06,117:INFO:__main__: total results : 1283898
+2024-07-29 22:56:06,118:INFO:__main__: start_index : 10000
+2024-07-29 22:56:36,764:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:56:37,352:INFO:__main__: total results : 1283898
+2024-07-29 22:56:37,353:INFO:__main__: start_index : 20000
+2024-07-29 22:57:06,377:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:57:07,258:INFO:__main__: total results : 1283898
+2024-07-29 22:57:07,260:INFO:__main__: start_index : 30000
+2024-07-29 22:57:35,190:INFO:utils.data_fetcher: Response: <Response [200]>
+2024-07-29 22:57:36,125:INFO:__main__: total results : 1283898
+2024-07-29 22:57:36,126:INFO:__main__: start_index : 40000
