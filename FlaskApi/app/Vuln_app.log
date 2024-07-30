@@ -1,0 +1,209 @@
+2024-07-31 00:55:21,675:INFO:Routes have been registered successfully.
+2024-07-31 00:55:21,694:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-07-31 00:55:21,694:INFO:[33mPress CTRL+C to quit[0m
+2024-07-31 00:55:21,696:INFO: * Restarting with stat
+2024-07-31 00:55:22,415:INFO:Routes have been registered successfully.
+2024-07-31 00:55:22,420:WARNING: * Debugger is active!
+2024-07-31 00:55:22,427:INFO: * Debugger PIN: 827-793-833
+2024-07-31 00:55:27,139:INFO:127.0.0.1 - - [31/Jul/2024 00:55:27] "GET /CVE_ID=CVE-1999-1467 HTTP/1.1" 200 -
+2024-07-31 00:56:15,561:INFO:127.0.0.1 - - [31/Jul/2024 00:56:15] "GET /CVE_ID=CVE-2019-1010218 HTTP/1.1" 200 -
+2024-07-31 00:58:09,487:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 00:58:09,583:INFO: * Restarting with stat
+2024-07-31 00:58:10,384:INFO:Routes have been registered successfully.
+2024-07-31 00:58:10,390:WARNING: * Debugger is active!
+2024-07-31 00:58:10,397:INFO: * Debugger PIN: 827-793-833
+2024-07-31 00:58:11,851:INFO:127.0.0.1 - - [31/Jul/2024 00:58:11] "GET /CVE_ID=CVE-2019-1010218 HTTP/1.1" 200 -
+2024-07-31 01:01:32,052:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:01:32,145:INFO: * Restarting with stat
+2024-07-31 01:01:32,796:INFO:Routes have been registered successfully.
+2024-07-31 01:01:32,802:WARNING: * Debugger is active!
+2024-07-31 01:01:32,806:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:37:40,091:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:37:40,192:INFO: * Restarting with stat
+2024-07-31 01:37:40,943:INFO:Routes have been registered successfully.
+2024-07-31 01:37:40,948:WARNING: * Debugger is active!
+2024-07-31 01:37:40,954:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:37:53,309:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:37:53,402:INFO: * Restarting with stat
+2024-07-31 01:37:54,079:INFO:Routes have been registered successfully.
+2024-07-31 01:37:54,084:WARNING: * Debugger is active!
+2024-07-31 01:37:54,090:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:37:57,213:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:37:57,296:INFO: * Restarting with stat
+2024-07-31 01:37:57,979:INFO:Routes have been registered successfully.
+2024-07-31 01:37:57,984:WARNING: * Debugger is active!
+2024-07-31 01:37:57,990:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:38:02,137:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:38:02,243:INFO: * Restarting with stat
+2024-07-31 01:38:02,887:INFO:Routes have been registered successfully.
+2024-07-31 01:38:02,893:WARNING: * Debugger is active!
+2024-07-31 01:38:02,898:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:46:53,854:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:46:53,940:INFO: * Restarting with stat
+2024-07-31 01:46:54,573:INFO:Routes have been registered successfully.
+2024-07-31 01:46:54,579:WARNING: * Debugger is active!
+2024-07-31 01:46:54,583:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:47:00,784:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:47:00,881:INFO: * Restarting with stat
+2024-07-31 01:47:01,503:INFO:Routes have been registered successfully.
+2024-07-31 01:47:01,510:WARNING: * Debugger is active!
+2024-07-31 01:47:01,514:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:47:15,903:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:47:16,022:INFO: * Restarting with stat
+2024-07-31 01:47:16,668:INFO:Routes have been registered successfully.
+2024-07-31 01:47:16,675:WARNING: * Debugger is active!
+2024-07-31 01:47:16,680:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:51:40,794:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:51:40,906:INFO: * Restarting with stat
+2024-07-31 01:51:41,563:INFO:Routes have been registered successfully.
+2024-07-31 01:51:41,569:WARNING: * Debugger is active!
+2024-07-31 01:51:41,574:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:52:28,721:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:52:28,799:INFO: * Restarting with stat
+2024-07-31 01:52:31,139:INFO:Routes have been registered successfully.
+2024-07-31 01:52:31,171:WARNING: * Debugger is active!
+2024-07-31 01:52:31,177:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:52:41,478:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:52:41,566:INFO: * Restarting with stat
+2024-07-31 01:52:42,198:INFO:Routes have been registered successfully.
+2024-07-31 01:52:42,204:WARNING: * Debugger is active!
+2024-07-31 01:52:42,210:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:52:52,489:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:52:52,573:INFO: * Restarting with stat
+2024-07-31 01:52:53,206:INFO:Routes have been registered successfully.
+2024-07-31 01:52:53,211:WARNING: * Debugger is active!
+2024-07-31 01:52:53,216:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:52:58,385:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:52:58,466:INFO: * Restarting with stat
+2024-07-31 01:52:59,091:INFO:Routes have been registered successfully.
+2024-07-31 01:52:59,098:WARNING: * Debugger is active!
+2024-07-31 01:52:59,102:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:53:18,598:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:53:18,684:INFO: * Restarting with stat
+2024-07-31 01:53:19,320:INFO:Routes have been registered successfully.
+2024-07-31 01:53:19,327:WARNING: * Debugger is active!
+2024-07-31 01:53:19,333:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:53:26,551:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:53:26,653:INFO: * Restarting with stat
+2024-07-31 01:53:27,292:INFO:Routes have been registered successfully.
+2024-07-31 01:53:27,298:WARNING: * Debugger is active!
+2024-07-31 01:53:27,303:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:53:33,497:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:53:33,581:INFO: * Restarting with stat
+2024-07-31 01:53:34,222:INFO:Routes have been registered successfully.
+2024-07-31 01:53:34,229:WARNING: * Debugger is active!
+2024-07-31 01:53:34,233:INFO: * Debugger PIN: 827-793-833
+2024-07-31 01:53:41,552:INFO:metric: {'cvssMetricV2': [], 'cvssMetricV3': [{'source': 'nvd@nist.gov', 'type': 'Primary', 'cvssData': {'version': 3.1, 'vectorstring': 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H', 'accessvector': 'NETWORK', 'basescore': 7.5}, 'baseseverity': 'HIGH', 'exploitabilityscore': 3.9, 'impactscore': 3.6}]}
+2024-07-31 01:53:41,925:INFO:127.0.0.1 - - [31/Jul/2024 01:53:41] "GET /CVE_ID=CVE-2019-1010218 HTTP/1.1" 200 -
+2024-07-31 01:54:25,486:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 01:54:25,578:INFO: * Restarting with stat
+2024-07-31 01:54:26,285:INFO:Routes have been registered successfully.
+2024-07-31 01:54:26,291:WARNING: * Debugger is active!
+2024-07-31 01:54:26,296:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:08:37,487:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:08:37,570:INFO: * Restarting with stat
+2024-07-31 02:08:38,225:INFO:Routes have been registered successfully.
+2024-07-31 02:08:38,231:WARNING: * Debugger is active!
+2024-07-31 02:08:38,236:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:08:44,421:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:08:44,539:INFO: * Restarting with stat
+2024-07-31 02:08:45,171:INFO:Routes have been registered successfully.
+2024-07-31 02:08:45,177:WARNING: * Debugger is active!
+2024-07-31 02:08:45,182:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:09:53,764:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:09:53,867:INFO: * Restarting with stat
+2024-07-31 02:09:54,534:INFO:Routes have been registered successfully.
+2024-07-31 02:09:54,539:WARNING: * Debugger is active!
+2024-07-31 02:09:54,543:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:09:56,635:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:09:56,740:INFO: * Restarting with stat
+2024-07-31 02:09:57,388:INFO:Routes have been registered successfully.
+2024-07-31 02:09:57,394:WARNING: * Debugger is active!
+2024-07-31 02:09:57,399:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:10:03,345:INFO:metric: {'cvssMetricV2': [], 'cvssMetricV3': [{'source': 'nvd@nist.gov', 'type': 'Primary', 'cvssData': {'version': 3.1, 'vectorstring': 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H', 'accessvector': 'NETWORK', 'basescore': 7.5}, 'baseseverity': 'HIGH', 'exploitabilityscore': 3.9, 'impactscore': 3.6}]}
+2024-07-31 02:10:03,779:INFO:127.0.0.1 - - [31/Jul/2024 02:10:03] "GET /CVE_ID=CVE-2019-1010218 HTTP/1.1" 200 -
+2024-07-31 02:10:49,652:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:10:49,742:INFO: * Restarting with stat
+2024-07-31 02:10:50,387:INFO:Routes have been registered successfully.
+2024-07-31 02:10:50,393:WARNING: * Debugger is active!
+2024-07-31 02:10:50,398:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:10:54,541:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:10:54,623:INFO: * Restarting with stat
+2024-07-31 02:10:55,251:INFO:Routes have been registered successfully.
+2024-07-31 02:10:55,257:WARNING: * Debugger is active!
+2024-07-31 02:10:55,262:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:10:59,976:INFO:metric: {'cvssMetricV2': [], 'cvssMetricV3': [{'source': 'nvd@nist.gov', 'type': 'Primary', 'cvssData': {'version': 3.1, 'vectorstring': 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H', 'accessvector': 'NETWORK', 'baseseverity': 'HIGH', 'basescore': 7.5}, 'exploitabilityscore': 3.9, 'impactscore': 3.6}]}
+2024-07-31 02:11:00,339:INFO:127.0.0.1 - - [31/Jul/2024 02:11:00] "GET /CVE_ID=CVE-2019-1010218 HTTP/1.1" 200 -
+2024-07-31 02:11:17,822:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:11:17,916:INFO: * Restarting with stat
+2024-07-31 02:11:18,670:INFO:Routes have been registered successfully.
+2024-07-31 02:11:18,677:WARNING: * Debugger is active!
+2024-07-31 02:11:18,682:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:11:36,159:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:11:36,254:INFO: * Restarting with stat
+2024-07-31 02:11:36,892:INFO:Routes have been registered successfully.
+2024-07-31 02:11:36,898:WARNING: * Debugger is active!
+2024-07-31 02:11:36,902:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:11:47,190:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:11:47,277:INFO: * Restarting with stat
+2024-07-31 02:11:47,923:INFO:Routes have been registered successfully.
+2024-07-31 02:11:47,929:WARNING: * Debugger is active!
+2024-07-31 02:11:47,934:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:11:58,230:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:11:58,315:INFO: * Restarting with stat
+2024-07-31 02:11:58,948:INFO:Routes have been registered successfully.
+2024-07-31 02:11:58,954:WARNING: * Debugger is active!
+2024-07-31 02:11:58,959:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:12:03,119:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:12:03,201:INFO: * Restarting with stat
+2024-07-31 02:12:03,872:INFO:Routes have been registered successfully.
+2024-07-31 02:12:03,877:WARNING: * Debugger is active!
+2024-07-31 02:12:03,882:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:12:09,050:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:12:09,139:INFO: * Restarting with stat
+2024-07-31 02:12:09,783:INFO:Routes have been registered successfully.
+2024-07-31 02:12:09,790:WARNING: * Debugger is active!
+2024-07-31 02:12:09,795:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:12:15,992:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:12:16,078:INFO: * Restarting with stat
+2024-07-31 02:12:16,701:INFO:Routes have been registered successfully.
+2024-07-31 02:12:16,707:WARNING: * Debugger is active!
+2024-07-31 02:12:16,713:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:12:26,996:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:12:27,101:INFO: * Restarting with stat
+2024-07-31 02:12:27,801:INFO:Routes have been registered successfully.
+2024-07-31 02:12:27,809:WARNING: * Debugger is active!
+2024-07-31 02:12:27,816:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:12:29,914:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:12:30,023:INFO: * Restarting with stat
+2024-07-31 02:12:30,666:INFO:Routes have been registered successfully.
+2024-07-31 02:12:30,672:WARNING: * Debugger is active!
+2024-07-31 02:12:30,677:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:12:32,765:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:12:32,855:INFO: * Restarting with stat
+2024-07-31 02:12:33,491:INFO:Routes have been registered successfully.
+2024-07-31 02:12:33,498:WARNING: * Debugger is active!
+2024-07-31 02:12:33,503:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:12:40,719:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:12:40,807:INFO: * Restarting with stat
+2024-07-31 02:12:41,464:INFO:Routes have been registered successfully.
+2024-07-31 02:12:41,470:WARNING: * Debugger is active!
+2024-07-31 02:12:41,476:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:12:43,235:INFO:metric: {'cvssMetricV2': [], 'cvssMetricV3': [{'source': 'nvd@nist.gov', 'type': 'Primary', 'cvssData': {'version': 3.1, 'vectorString': 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H', 'accessVector': 'NETWORK', 'baseSeverity': 'HIGH', 'baseScore': 7.5}, 'exploitabilityScore': 3.9, 'impactScore': 3.6}]}
+2024-07-31 02:12:43,591:INFO:127.0.0.1 - - [31/Jul/2024 02:12:43] "GET /CVE_ID=CVE-2019-1010218 HTTP/1.1" 200 -
+2024-07-31 02:14:14,691:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:14:14,813:INFO: * Restarting with stat
+2024-07-31 02:14:15,447:INFO:Routes have been registered successfully.
+2024-07-31 02:14:15,454:WARNING: * Debugger is active!
+2024-07-31 02:14:15,458:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:14:24,720:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:14:24,806:INFO: * Restarting with stat
+2024-07-31 02:14:25,477:INFO:Routes have been registered successfully.
+2024-07-31 02:14:25,482:WARNING: * Debugger is active!
+2024-07-31 02:14:25,487:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:14:28,614:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:14:28,696:INFO: * Restarting with stat
+2024-07-31 02:14:29,361:INFO:Routes have been registered successfully.
+2024-07-31 02:14:29,367:WARNING: * Debugger is active!
+2024-07-31 02:14:29,371:INFO: * Debugger PIN: 827-793-833

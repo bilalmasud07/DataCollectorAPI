@@ -1,26 +1,160 @@
-from flask import request, jsonify
-#from app import db
-from app.models import CVE, CVSSMetric, CpeMatch, Nodes, Configurations, SourceType, Matches, MatchString, CPE, Titles, Descriptions
+from flask import jsonify
+from app.models import CVE, CVSSMetric, CpeMatch, Nodes, Configurations, SourceType, Matches, MatchString, CPE, Titles, Descriptions, Weaknesses, WeaknessesDescriptions
 import logging
 from sqlalchemy.sql import text
-from datetime import datetime
+from datetime import datetime, timezone
+from collections import OrderedDict
+
+# Get the current UTC time with timezone awareness
+current_utc_time = datetime.now(timezone.utc)
+
+# Format it as requested
+formatted_time = current_utc_time.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3]
+
 
 def register_routes(app, db):
     @app.route('/', methods=['GET'])
     def index():
         return jsonify({"message": "Welcome to the CVE API!"}), 200
 
-    @app.route('/test_db', methods=['GET'])
-    def test_db():
+    @app.route('/Product_ID=<uuid:cpename_id>', methods=['GET'])
+    def get_cpe(cpename_id):
         try:
-            query = text("SELECT * FROM cve LIMIT 10;")
-            result = db.session.execute(query).fetchall()
-            #data = [dict(row) for row in result]
-            data = [{'cve_id': row.cve_id, 'sourceIdentifier': row.sourceidentifier} for row in result]
+            query = text("SELECT * FROM CPE WHERE cpeNameId = :cpename_id")
+            result = db.session.execute(query, {'cpename_id': cpename_id}).fetchone()
+            if result:
+                data = {
+                    'cpenameid': result.cpenameid,
+                    'cpename': result.cpename,
+                    'deprecated': result.deprecated,
+                    'lastmodified': result.lastmodified,
+                    'created': result.created
+                }
+                return jsonify(data), 200
+            else:
+                return jsonify({"error": f"CPE with cpeNameId {cpename_id} not found."}), 404
+        except Exception as e:
+            logging.error(f"Error in get_cpe: {e}")
+            return jsonify({"error": "Internal Server Error"}), 500
+
+    @app.route('/CVE_ID=<string:cveid>', methods=['GET'])
+    def get_cve(cveid):
+        try:
+            cve = db.session.query(CVE).filter_by(cve_id=cveid).first()
+            if not cve:
+                return jsonify({"error": f"CVE with ID {cveid} not found."}), 404
+
+            descriptions = db.session.query(Descriptions).filter_by(cve_id=cveid).all()
+            cvss_metrics = db.session.query(CVSSMetric).filter_by(cve_id=cveid).all()
+            weaknesses = db.session.query(Weaknesses).filter_by(cve_id=cveid).all()
+            configurations = db.session.query(Configurations).filter_by(cve_id=cveid).all()
+
+            metrics_data = {
+                "cvssMetricV2": [
+                    {
+                        "source": source_type.source,
+                        "type": source_type.type,
+                        "cvssData": {
+                            "version": metric.version,
+                            "vectorString": metric.vectorString,
+                            "accessVector": metric.attackVector,
+                            "baseScore": metric.baseScore
+                        },
+                        "baseSeverity": metric.baseSeverity,
+                        "exploitabilityScore": metric.exploitabilityScore,
+                        "impactScore": metric.impactScore
+                    } for metric in cvss_metrics if metric.version == 2 for source_type in [db.session.query(SourceType).filter_by(id=metric.source_type_id).first()]
+                ],
+                "cvssMetricV3": [
+                    {
+                        "source": source_type.source,
+                        "type": source_type.type,
+                        "cvssData": {
+                            "version": metric.version,
+                            "vectorString": metric.vectorstring,
+                            "accessVector": metric.attackvector,
+                            "baseSeverity": metric.baseseverity,
+                            "baseScore": metric.basescore
+                        },
+                        "exploitabilityScore": metric.exploitabilityscore,
+                        "impactScore": metric.impactscore
+                    } for metric in cvss_metrics if metric.version >= 3 for source_type in [db.session.query(SourceType).filter_by(id=metric.source_type_id).first()]
+                ] # for metric in cvss_metrics for source_type in db.session.query(SourceType).filter_by(id=metric.source_type_id).all()
+            }
+            logging.info(f"metric: {metrics_data}")
+            data = OrderedDict({
+                    "resultsPerPage": 1,
+                    "startIndex": 0,
+                    "totalResults": 1,
+                    "format": "NVD_CVE",
+                    "version": "2.0",
+                    "timestamp": formatted_time,
+                    "vulnerabilities": [
+                    {
+                        "cve": {
+                            "id": cve.cve_id,
+                            "sourceIdentifier": cve.sourceidentifier,
+                            "published": cve.published.isoformat(timespec='milliseconds') if cve.published else None,
+                            "lastModified": cve.lastmodified.isoformat(timespec='milliseconds') if cve.lastmodified else None,
+                            "vulnStatus": cve.vulnstatus,
+                            "descriptions": [
+                                {"lang": desc.lang, "value": desc.value} for desc in descriptions
+                            ],
+                            # "metrics": {
+                            #     "cvssMetricV2": [
+                            #         {
+                            #             "source": source_type.source,
+                            #             "type": source_type.type,
+                            #             "cvssData": {
+                            #                 "version": metric.version,
+                            #                 "vectorString": metric.vectorstring,
+                            #                 "attackVector": metric.attackvector,
+                            #                 "baseScore": metric.basescore
+                            #             },
+                            #             "baseSeverity": metric.baseseverity,
+                            #             "exploitabilityScore": metric.exploitabilityscore,
+                            #             "impactScore": metric.impactscore
+                            #         } for metric in cvss_metrics for source_type in db.session.query(SourceType).filter_by(id=metric.source_type_id).all()
+                            #     ]
+                            # },
+                            "metrics": {
+                                k: v for k, v in metrics_data.items() if v  # Only include if the list is not empty
+                            },
+                            "weaknesses": [
+                                {
+                                    "source": weakness.source,
+                                    "type": weakness.type,
+                                    "description": [
+                                        {"lang": desc.lang, "value": desc.value} for desc in db.session.query(WeaknessesDescriptions).filter_by(weakness_id=weakness.id).all()
+                                    ]
+                                } for weakness in weaknesses
+                            ],
+                            "configurations": [
+                                {
+                                    "nodes": [
+                                        {
+                                            "operator": node.operator,
+                                            "negate": node.negate,
+                                            "cpeMatch": [
+                                                {
+                                                    "vulnerable": match.vulnerable,
+                                                    "criteria": match.criteria,
+                                                    "matchCriteriaId": str(match.matchcriteriaid).upper()
+                                                } for match in db.session.query(CpeMatch).filter_by(node_id=node.id).all()
+                                            ]
+                                        } for node in db.session.query(Nodes).filter_by(configuration_id=config.id).all()
+                                    ]
+                                } for config in configurations
+                            ]
+                        }
+                    }
+                ]
+            })
             return jsonify(data), 200
         except Exception as e:
-            logging.error(f"Error in test_db: {e}")
+            logging.error(f"Error in get_cve: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
+
 
     @app.route('/severity_distribution', methods=['GET'])
     def severity_distribution():
