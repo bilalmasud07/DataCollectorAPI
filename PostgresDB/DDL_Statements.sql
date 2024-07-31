@@ -81,6 +81,8 @@ DROP table CpeMatch;
 drop table matches;
 drop table matchstring;
 
+drop table CPE;
+drop table Titles;
 
 CREATE TABLE MatchString (
 	matchCriteriaId UUID PRIMARY KEY,

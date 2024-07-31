@@ -1,9 +1,11 @@
-from flask import jsonify
+from flask import jsonify, Response
 from app.models import CVE, CVSSMetric, CpeMatch, Nodes, Configurations, SourceType, Matches, MatchString, CPE, Titles, Descriptions, Weaknesses, WeaknessesDescriptions
 import logging
 from sqlalchemy.sql import text
 from datetime import datetime, timezone
-from collections import OrderedDict
+import json
+from sqlalchemy import func
+from collections import defaultdict
 
 # Get the current UTC time with timezone awareness
 current_utc_time = datetime.now(timezone.utc)
@@ -20,19 +22,43 @@ def register_routes(app, db):
     @app.route('/Product_ID=<uuid:cpename_id>', methods=['GET'])
     def get_cpe(cpename_id):
         try:
-            query = text("SELECT * FROM CPE WHERE cpeNameId = :cpename_id")
-            result = db.session.execute(query, {'cpename_id': cpename_id}).fetchone()
-            if result:
-                data = OrderedDict({
-                    'cpenameid': result.cpenameid,
-                    'cpename': result.cpename,
-                    'deprecated': result.deprecated,
-                    'lastmodified': result.lastmodified,
-                    'created': result.created
-                })
-                return jsonify(data), 200
-            else:
-                return jsonify({"error": f"CPE with cpeNameId {cpename_id} not found."}), 404
+            # Query to join necessary tables
+            cpe_data = db.session.query(
+                CPE,
+                Titles
+            ).outerjoin(Titles, Titles.cpenameid == CPE.cpenameid)\
+            .filter(CPE.cpenameid == cpename_id)\
+            .all()
+            logging.info(f"cpe_data: {cpe_data}")
+            if not cpe_data:
+                return jsonify({"error": f"CPE with ID {cpename_id} not found."}), 404
+
+            # Create the cpe object
+            cpe = cpe_data[0][0]
+            titles = [title for cpe, title in cpe_data if title]
+
+            data = {
+                "totalResults": len(cpe_data),
+                "format": "NVD_CPE",
+                "version": "2.0",
+                "timestamp": formatted_time,
+                "products": [
+                    {
+                        "cpe": {
+                            "deprecated": cpe.deprecated,
+                            "cpeName": cpe.cpename,
+                            "cpeNameid": str(cpe.cpenameid).upper(),
+                            "lastModified": cpe.lastmodified.isoformat(timespec='milliseconds') if cpe.lastmodified else None,
+                            "created": cpe.created.isoformat(timespec='milliseconds') if cpe.created else None,
+                            "titles": [
+                                {"title": title.title, "title": title.title} for title in titles
+                            ]
+                        }
+                    }
+                ]
+            }
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
         except Exception as e:
             logging.error(f"Error in get_cpe: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
@@ -82,9 +108,7 @@ def register_routes(app, db):
                 ] # for metric in cvss_metrics for source_type in db.session.query(SourceType).filter_by(id=metric.source_type_id).all()
             }
             logging.info(f"metric: {metrics_data}")
-            data = OrderedDict({
-                    "resultsPerPage": 1,
-                    "startIndex": 0,
+            data = {
                     "totalResults": 1,
                     "format": "NVD_CVE",
                     "version": "2.0",
@@ -100,23 +124,6 @@ def register_routes(app, db):
                             "descriptions": [
                                 {"lang": desc.lang, "value": desc.value} for desc in descriptions
                             ],
-                            # "metrics": {
-                            #     "cvssMetricV2": [
-                            #         {
-                            #             "source": source_type.source,
-                            #             "type": source_type.type,
-                            #             "cvssData": {
-                            #                 "version": metric.version,
-                            #                 "vectorString": metric.vectorstring,
-                            #                 "attackVector": metric.attackvector,
-                            #                 "baseScore": metric.basescore
-                            #             },
-                            #             "baseSeverity": metric.baseseverity,
-                            #             "exploitabilityScore": metric.exploitabilityscore,
-                            #             "impactScore": metric.impactscore
-                            #         } for metric in cvss_metrics for source_type in db.session.query(SourceType).filter_by(id=metric.source_type_id).all()
-                            #     ]
-                            # },
                             "metrics": {
                                 k: v for k, v in metrics_data.items() if v  # Only include if the list is not empty
                             },
@@ -149,8 +156,9 @@ def register_routes(app, db):
                         }
                     }
                 ]
-            })
-            return jsonify(data), 200
+            }
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
         except Exception as e:
             logging.error(f"Error in get_cve: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
@@ -160,38 +168,22 @@ def register_routes(app, db):
     def severity_distribution():
         try:
             logging.info("Executing a query for: severity_distribution")
-            # query = text("""
-            #                 SELECT cvsm.baseSeverity as baseseverity, COUNT(*) as total_severties
-            #                 FROM CVSSMetric cvsm
-            #                 join Source_type st on cvsm.source_type_id = st.id
-            #                 JOIN CVE ON cvsm.cve_id = CVE.cve_id
-            #                 WHERE CVE.lastmodified < '2024-05-02' and cve.vulnstatus != 'Rejected' and st.type = 'Primary'
-            #                 GROUP by baseseverity
-            #                 order by baseseverity;
-            # """)
-            
-            # result = db.session.execute(query).fetchall()
-
-            # logging.info(f"Result of severity_distribution query: {result}")
-
-            # data = [{'severity': row.baseseverity, 'total_severties': row.total_severties} for row in result]
-            # return jsonify(data), 200
             
             # Ensure the date is a datetime object
             cutoff_date = datetime.strptime('2024-05-02', '%Y-%m-%d')
 
             result = db.session.query(
                 CVE.cve_id,
-                CVSSMetric.exploitabilityScore
+                CVSSMetric.exploitabilityscore
             ).join(CVSSMetric, CVSSMetric.cve_id == CVE.cve_id)\
-            .filter(CVE.lastModified < cutoff_date)\
-            .filter(CVE.vulnStatus != 'Rejected')\
-            .order_by(CVSSMetric.exploitabilityScore.desc(), CVE.cve_id)\
+            .filter(CVE.lastmodified < cutoff_date)\
+            .filter(CVE.vulnstatus != 'Rejected')\
+            .order_by(CVSSMetric.exploitabilityscore.desc(), CVE.cve_id)\
             .limit(10).all()
 
-            data = [{'cve_id': row.cve_id, 'exploitabilityScore': row.exploitabilityScore} for row in result]
-            return jsonify(data), 200
-
+            data = [{'cve_id': row.cve_id, 'exploitabilityScore': row.exploitabilityscore} for row in result]
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
         except Exception as e:
             logging.error(f"Error in severity_distribution: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
@@ -200,28 +192,28 @@ def register_routes(app, db):
     @app.route('/worst_products_platforms', methods=['GET'])
     def worst_products_platforms():
         try:
-            logging.info("Executing a query for: worst_products_platforms")
-            query = text("""
-                            select cp.cpename as product, count(*) as total_known_vulnerabilities
-                            from cpe cp
-                            inner join Titles t on t.cpenameid = cp.cpenameid 
-                            inner join matches m on m.cpenameid = cp.cpenameid 
-                            inner join matchstring ms on ms.matchcriteriaid = m.matchcriteriaid 
-                            inner join cpematch cpm on cpm.matchcriteriaid = ms.matchcriteriaid 
-                            inner join nodes n on cpm.node_id = n.id 
-                            inner join configurations conf on n.configuration_id = conf.id 
-                            inner join cve cv on conf.cve_id = cv.cve_id 
-                            WHERE cv.lastModified < '2024-05-02' and cv.vulnstatus != 'Rejected'
-                            group by cp.cpename 
-                            order by total_known_vulnerabilities desc;
-            """)
-            
-            result = db.session.execute(query).fetchall()
+            cutoff_date = datetime.strptime('2024-05-02', '%Y-%m-%d')
 
-            logging.info(f"Result of worst_products_platforms query: {result}")
+            result = db.session.query(
+                CPE.cpename.label('product'),
+                func.count(CPE.cpename).label('total_known_vulnerabilities')
+            ).join(Titles, Titles.cpenameid == CPE.cpenameid)\
+            .join(Matches, Matches.cpenameid == CPE.cpenameid)\
+            .join(MatchString, MatchString.matchcriteriaid == Matches.matchcriteriaid)\
+            .join(CpeMatch, CpeMatch.matchcriteriaid == MatchString.matchcriteriaid)\
+            .join(Nodes, CpeMatch.node_id == Nodes.id)\
+            .join(Configurations, Nodes.configuration_id == Configurations.id)\
+            .join(CVE, Configurations.cve_id == CVE.cve_id)\
+            .filter(CVE.lastmodified < cutoff_date)\
+            .filter(CVE.vulnstatus != 'Rejected')\
+            .filter(CPE.deprecated == False)\
+            .group_by(CPE.cpename)\
+            .order_by(func.count(CPE.cpename).desc())\
+            .limit(10).all()
 
             data = [{'product': row.product, 'total_known_vulnerabilities': row.total_known_vulnerabilities} for row in result]
-            return jsonify(data), 200
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
 
         except Exception as e:
             logging.error(f"Error in worst_products_platforms: {e}")
@@ -231,22 +223,21 @@ def register_routes(app, db):
     def top_vulnerabilities_highest_impact():
         try:
             logging.info("Executing a query for: top_vulnerabilities_highest_impact")
-            query = text("""
-                            SELECT c.cve_id, cvsm.impactScore as impactScore
-                            FROM CVSSMetric cvsm
-                            JOIN CVE c ON cvsm.cve_id = c.cve_id
-                            WHERE c.lastmodified < '2024-05-02' and c.vulnstatus != 'Rejected'
-                            ORDER BY cvsm.impactScore DESC, c.cve_id
-                            LIMIT 10;
-            """)
-            
-            result = db.session.execute(query).fetchall()
+            # Ensure the date is a datetime object
+            cutoff_date = datetime.strptime('2024-05-02', '%Y-%m-%d')
 
-            logging.info(f"Result of top_vulnerabilities_highest_impact query: {result}")
+            result = db.session.query(
+                CVE.cve_id,
+                CVSSMetric.impactscore
+            ).join(CVSSMetric, CVSSMetric.cve_id == CVE.cve_id)\
+            .filter(CVE.lastmodified < cutoff_date)\
+            .filter(CVE.vulnstatus != 'Rejected')\
+            .order_by(CVSSMetric.impactscore.desc(), CVE.cve_id)\
+            .limit(10).all()
 
             data = [{'cve_id': row.cve_id, 'impactScore': row.impactscore} for row in result]
-            return jsonify(data), 200
-
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
         except Exception as e:
             logging.error(f"Error in top_vulnerabilities_highest_impact: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
@@ -254,22 +245,20 @@ def register_routes(app, db):
     @app.route('/top_vulnerabilities_highest_exploitability', methods=['GET'])
     def top_vulnerabilities_highest_exploitability():
         try:
-            logging.info("Executing a query for: top_vulnerabilities_highest_exploitability")
-            query = text("""
-                        SELECT c.cve_id, cvsm.exploitabilityscore as exploitabilityscore
-                        FROM CVSSMetric cvsm
-                        JOIN CVE c ON cvsm.cve_id = c.cve_id
-                        WHERE c.lastmodified < '2024-05-02' and c.vulnstatus != 'Rejected'
-                        ORDER BY cvsm.exploitabilityScore DESC, c.cve_id
-                        LIMIT 10;
-            """)
-            
-            result = db.session.execute(query).fetchall()
+            cutoff_date = datetime.strptime('2024-05-02', '%Y-%m-%d')
 
-            logging.info(f"Result of top_vulnerabilities_highest_exploitability query: {result}")
+            result = db.session.query(
+                CVE.cve_id,
+                CVSSMetric.exploitabilityscore
+            ).join(CVSSMetric, CVSSMetric.cve_id == CVE.cve_id)\
+            .filter(CVE.lastmodified < cutoff_date)\
+            .filter(CVE.vulnstatus != 'Rejected')\
+            .order_by(CVSSMetric.exploitabilityscore.desc(), CVE.cve_id)\
+            .limit(10).all()
 
             data = [{'cve_id': row.cve_id, 'exploitabilityscore': row.exploitabilityscore} for row in result]
-            return jsonify(data), 200
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
 
         except Exception as e:
             logging.error(f"Error in top_vulnerabilities_highest_exploitability: {e}")
@@ -278,26 +267,74 @@ def register_routes(app, db):
     @app.route('/top_attack_vectors', methods=['GET'])
     def top_attack_vectors():
         try:
-            logging.info("Executing a query for: top_attack_vectors")
-            query = text("""
-                            SELECT cvsm.attackVector, COUNT(*) as total_count
-                            FROM CVSSMetric cvsm
-                            JOIN CVE c ON cvsm.cve_id = c.cve_id
-                            WHERE c.lastmodified < '2024-05-02' and c.vulnstatus != 'Rejected'
-                            GROUP BY attackVector
-                            ORDER BY total_count DESC
-                            LIMIT 10;
-            """)
-            
-            result = db.session.execute(query).fetchall()
+            cutoff_date = datetime.strptime('2024-05-02', '%Y-%m-%d')
 
-            logging.info(f"Result of top_attack_vectors query: {result}")
+            result = db.session.query(
+                CVSSMetric.attackvector,
+                func.count(CVSSMetric.attackvector).label('total_count')
+            ).join(CVE, CVSSMetric.cve_id == CVE.cve_id)\
+            .filter(CVE.lastmodified < cutoff_date)\
+            .filter(CVE.vulnstatus != 'Rejected')\
+            .group_by(CVSSMetric.attackvector)\
+            .order_by(func.count(CVSSMetric.attackvector).desc())\
+            .limit(10).all()
 
             data = [{'attackVector': row.attackvector, 'total_count': row.total_count} for row in result]
-            return jsonify(data), 200
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
 
         except Exception as e:
             logging.error(f"Error in top_attack_vectors: {e}")
+            return jsonify({"error": "Internal Server Error"}), 500
+
+    @app.route('/matchCriteriaId=<uuid:matchcriteriaid>', methods=['GET'])
+    def match_strings(matchcriteriaid):
+        try:
+            # Query to join necessary tables
+            result = db.session.query(
+                MatchString,
+                Matches
+            ).join(Matches, MatchString.matchcriteriaid == Matches.matchcriteriaid)\
+            .filter(MatchString.matchcriteriaid == matchcriteriaid)\
+            .all()
+
+            match_strings_dict = defaultdict(list)
+            for match_string, match in result:
+                match_strings_dict[match_string].append(match)
+            logging.info(f"match_strings_dict: {match_strings_dict}")
+            match_strings = []
+            for match_string_id, matches in match_strings_dict.items():
+                match_string = match_string_id  # Get the MatchString instance from the first match
+                match_strings.append({
+                    "matchString": {
+                        "matchCriteriaId": str(match_string.matchcriteriaid).upper(),
+                        "criteria": match_string.criteria,
+                        "lastModified": match_string.lastmodified.isoformat(timespec='milliseconds') if match_string.lastmodified else None,
+                        "cpeLastModified": match_string.cpelastmodified.isoformat(timespec='milliseconds') if match_string.cpelastmodified else None,
+                        "created": match_string.created.isoformat(timespec='milliseconds') if match_string.created else None,
+                        "status": match_string.status,
+                        "matches": [
+                            {
+                                "cpeName": match.cpename,
+                                "cpeNameId": str(match.cpenameid).upper()
+                            } for match in matches
+                        ]
+                    }
+                })
+
+            data = {
+                "totalResults": len(match_strings),
+                "format": "NVD_CPEMatchString",
+                "version": "2.0",
+                "timestamp": datetime.now().isoformat(timespec='milliseconds'),
+                "matchStrings": match_strings
+            }
+
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
+
+        except Exception as e:
+            logging.error(f"Error in match_strings: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
 
     logging.info("Routes have been registered successfully.")

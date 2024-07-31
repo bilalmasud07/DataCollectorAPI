@@ -30,14 +30,14 @@ FROM 'D:/Study/Job/Cybercube/DataCollection/cve_csv_data/cpe_match.csv' DELIMITE
 
 
 COPY MatchString(matchCriteriaId, criteria, lastModified, cpeLastModified, created, status) 
-FROM 'D:/Study/Job/Cybercube/DataCollection/cpematch_csv_data/matchString.csv' DELIMITER '|' CSV HEADER;
+FROM 'D:/Study/Job/Cybercube/DataCollectorAPI/DataCollection/cpematch_csv_data/matchString.csv' DELIMITER '|' CSV HEADER;
 
 COPY Matches(id, matchCriteriaId, cpeName, cpeNameId) 
-FROM 'D:/Study/Job/Cybercube/DataCollection/cpematch_csv_data/matches.csv' DELIMITER '|' CSV HEADER;
+FROM 'D:/Study/Job/Cybercube/DataCollectorAPI/DataCollection/cpematch_csv_data/matches.csv' DELIMITER '|' CSV HEADER;
 
 
 COPY CPE(cpeNameId, cpeName, deprecated, lastModified, created) 
-FROM 'D:/Study/Job/Cybercube/DataCollection/cpe_csv_data/cpe.csv' DELIMITER '|' CSV HEADER;
+FROM 'D:/Study/Job/Cybercube/DataCollectorAPI/DataCollection/cpe_csv_data/cpe.csv' DELIMITER '|' CSV HEADER;
 
-COPY Titles(id, cpeNameId, lang, value) 
-FROM 'D:/Study/Job/Cybercube/DataCollection/cpe_csv_data/titles.csv' DELIMITER '|' CSV HEADER;
+COPY Titles(id, cpeNameId, title, value) 
+FROM 'D:/Study/Job/Cybercube/DataCollectorAPI/DataCollection/cpe_csv_data/titles.csv' DELIMITER '|' CSV HEADER;

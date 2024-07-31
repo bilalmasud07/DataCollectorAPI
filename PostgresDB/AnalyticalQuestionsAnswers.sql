@@ -54,7 +54,50 @@ WHERE CVE.lastModified < '2024-05-02'
 GROUP BY criteria
 ORDER BY total_known_vulnerabilities DESC;
 
--- check cpelastmodied, lastmodified of mastritng and cpe table respectively, and check the difference between the two columns
+select 
+cp.cpenameid, cp.cpename, cp.lastmodified,
+ms.lastmodified, ms.cpelastmodified, ms.matchcriteriaid,
+cv.lastmodified, cv.cve_id 
+from cpe cp
+inner join Titles t on t.cpenameid = cp.cpenameid 
+inner join matches m on m.cpenameid = cp.cpenameid 
+inner join matchstring ms on ms.matchcriteriaid = m.matchcriteriaid 
+inner join cpematch cpm on cpm.matchcriteriaid = ms.matchcriteriaid 
+inner join nodes n on cpm.node_id = n.id 
+inner join configurations conf on n.configuration_id = conf.id 
+inner join cve cv on conf.cve_id = cv.cve_id 
+WHERE cv.lastModified < '2024-05-02' 
+--and cv.vulnstatus != 'Rejected'
+and cp.deprecated = false
+and cv.cve_id = 'CVE-1999-0107'
+;
+
+select  
+c.cve_id , c.lastmodified, 
+cpm.matchcriteriaid,
+ms.lastmodified, ms.cpelastmodified, ms.created,
+m.cpenameid,
+cp.cpename, cp.cpenameid, cp.deprecated, cp.lastmodified, cp.created
+from cve c 
+join configurations conf on c.cve_id = conf.cve_id 
+join nodes n on conf.id = n.configuration_id 
+join cpematch cpm on cpm.node_id = n.id
+join matchstring ms on cpm.matchcriteriaid = ms.matchcriteriaid
+join matches m on cpm.matchcriteriaid = m.matchcriteriaid
+join cpe cp on cp.cpenameid = m.cpenameid 
+where 
+cp.cpenameid = '34BC934B-616A-4246-80B0-F38811D3C593'
+--vulnstatus !='Modified' and vulnstatus != 'Analyzed';
+--c.cve_id = 'CVE-1999-0107';
+--c.cve_id = 'CVE-2011-1171'
+and c.lastModified < '2024-05-02' and c.vulnstatus != 'Rejected'
+--and cp.deprecated = false
+;
+
+select * from matches m 
+where m.matchcriteriaid = ''
+
+-- check cpelastmodied, lastmodified of matchstring and cpe tables respectively, and check the difference between the two columns
 -- 
 
 -- final
@@ -67,11 +110,13 @@ inner join cpematch cpm on cpm.matchcriteriaid = ms.matchcriteriaid
 inner join nodes n on cpm.node_id = n.id 
 inner join configurations conf on n.configuration_id = conf.id 
 inner join cve cv on conf.cve_id = cv.cve_id 
-WHERE cv.lastModified < '2024-05-02' and cv.vulnstatus != 'Rejected'
+WHERE cv.lastModified < '2024-05-02' 
+and cv.vulnstatus != 'Rejected'
 and cp.deprecated = false 
---and cp.lastmodified < '2024-05-02'
 group by cp.cpename 
 order by total_known_vulnerabilities desc;
+
+
 -- 161,642 without any deprecated
 -- with deprrecated false 156,016
 -- with deprrecated and lastdate modified 155,831 
@@ -127,3 +172,12 @@ ORDER BY total_count DESC
 LIMIT 10;
 
 
+-- based on matchcriteriaid show all matches in cpematch API
+
+select ms.matchcriteriaid, m.*
+from matchstring ms 
+join matches m on ms.matchcriteriaid = m.matchcriteriaid 
+where 
+--ms.status = 'Active'
+ms.matchcriteriaid = '6f238c75-e24a-406f-beb5-8758c8fe9603'
+;

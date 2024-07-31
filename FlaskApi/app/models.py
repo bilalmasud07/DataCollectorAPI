@@ -77,7 +77,7 @@ class MatchString(db.Model):
     matchcriteriaid = db.Column(UUID(as_uuid=True), primary_key=True)
     criteria = db.Column(db.String(255), nullable=False)
     lastmodified = db.Column(db.TIMESTAMP, nullable=False)
-    cpeLastmodified = db.Column(db.TIMESTAMP)
+    cpelastmodified = db.Column(db.TIMESTAMP)
     created = db.Column(db.TIMESTAMP, nullable=False)
     status = db.Column(db.String(20), nullable=False)
 
@@ -85,8 +85,8 @@ class Matches(db.Model):
     __tablename__ = 'matches'
     id = db.Column(UUID(as_uuid=True), primary_key=True)
     matchcriteriaid = db.Column(UUID(as_uuid=True), db.ForeignKey('matchstring.matchCriteriaId'))
-    cpeName = db.Column(db.String(255), nullable=False)
-    cpeNameId = db.Column(UUID(as_uuid=True), db.ForeignKey('cpe.cpeNameId'))
+    cpename = db.Column(db.String(255), nullable=False)
+    cpenameid = db.Column(UUID(as_uuid=True), db.ForeignKey('cpe.cpeNameId'))
 
 class CPE(db.Model):
     __tablename__ = 'cpe'
