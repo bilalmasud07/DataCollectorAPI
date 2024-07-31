@@ -8,4 +8,3 @@ commands to run this file
 6- pip install -r requirements.txt
 7- python .\app.py
 8- 
-9-
