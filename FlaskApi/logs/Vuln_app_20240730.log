@@ -1,0 +1,23 @@
+2024-07-31 02:36:48,324:INFO:Routes have been registered successfully.
+2024-07-31 02:36:48,342:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-07-31 02:36:48,342:INFO:[33mPress CTRL+C to quit[0m
+2024-07-31 02:36:48,344:INFO: * Restarting with stat
+2024-07-31 02:36:48,983:INFO:Routes have been registered successfully.
+2024-07-31 02:36:48,989:WARNING: * Debugger is active!
+2024-07-31 02:36:48,994:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:42:20,684:INFO:127.0.0.1 - - [31/Jul/2024 02:42:20] "GET /Product_ID=bae41d20-d4af-4af0-aa7d-3bd04da402a7 HTTP/1.1" 200 -
+2024-07-31 02:43:28,700:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:43:28,788:INFO: * Restarting with stat
+2024-07-31 02:43:29,460:INFO:Routes have been registered successfully.
+2024-07-31 02:43:29,466:WARNING: * Debugger is active!
+2024-07-31 02:43:29,471:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:44:06,637:INFO:127.0.0.1 - - [31/Jul/2024 02:44:06] "GET /Product_ID=bae41d20-d4af-4af0-aa7d-3bd04da402a7 HTTP/1.1" 200 -
+2024-07-31 02:44:21,781:INFO: * Detected change in 'D:\\Study\\Job\\Cybercube\\DataCollectorAPI\\FlaskApi\\app\\routes.py', reloading
+2024-07-31 02:44:21,885:INFO: * Restarting with stat
+2024-07-31 02:44:22,714:INFO:Routes have been registered successfully.
+2024-07-31 02:44:22,722:WARNING: * Debugger is active!
+2024-07-31 02:44:22,728:INFO: * Debugger PIN: 827-793-833
+2024-07-31 02:44:23,600:INFO:127.0.0.1 - - [31/Jul/2024 02:44:23] "GET /Product_ID=bae41d20-d4af-4af0-aa7d-3bd04da402a7 HTTP/1.1" 200 -
+2024-07-31 02:44:25,047:INFO:127.0.0.1 - - [31/Jul/2024 02:44:25] "GET /Product_ID=bae41d20-d4af-4af0-aa7d-3bd04da402a7 HTTP/1.1" 200 -
+2024-07-31 02:44:25,844:INFO:127.0.0.1 - - [31/Jul/2024 02:44:25] "GET /Product_ID=bae41d20-d4af-4af0-aa7d-3bd04da402a7 HTTP/1.1" 200 -

@@ -54,6 +54,9 @@ WHERE CVE.lastModified < '2024-05-02'
 GROUP BY criteria
 ORDER BY total_known_vulnerabilities DESC;
 
+-- check cpelastmodied, lastmodified of mastritng and cpe table respectively, and check the difference between the two columns
+-- 
+
 -- final
 select cp.cpename as product, count(*) as total_known_vulnerabilities
 from cpe cp
@@ -64,8 +67,8 @@ inner join cpematch cpm on cpm.matchcriteriaid = ms.matchcriteriaid
 inner join nodes n on cpm.node_id = n.id 
 inner join configurations conf on n.configuration_id = conf.id 
 inner join cve cv on conf.cve_id = cv.cve_id 
-WHERE cv.lastModified < '2024-05-02' and cv.vulnstatus != 'Rejected' and ms.lastmodified < '2024-05-02' and ms.cpelastmodified < '2024-05-02'
---and cp.deprecated = true 
+WHERE cv.lastModified < '2024-05-02' and cv.vulnstatus != 'Rejected'
+and cp.deprecated = false 
 --and cp.lastmodified < '2024-05-02'
 group by cp.cpename 
 order by total_known_vulnerabilities desc;

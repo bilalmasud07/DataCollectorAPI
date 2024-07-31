@@ -23,13 +23,13 @@ def register_routes(app, db):
             query = text("SELECT * FROM CPE WHERE cpeNameId = :cpename_id")
             result = db.session.execute(query, {'cpename_id': cpename_id}).fetchone()
             if result:
-                data = {
+                data = OrderedDict({
                     'cpenameid': result.cpenameid,
                     'cpename': result.cpename,
                     'deprecated': result.deprecated,
                     'lastmodified': result.lastmodified,
                     'created': result.created
-                }
+                })
                 return jsonify(data), 200
             else:
                 return jsonify({"error": f"CPE with cpeNameId {cpename_id} not found."}), 404
