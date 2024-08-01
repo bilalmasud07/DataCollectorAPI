@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import json
 from sqlalchemy import func
 from collections import defaultdict
+from uuid import UUID
 
 # Get the current UTC time with timezone awareness
 current_utc_time = datetime.now(timezone.utc)
@@ -17,6 +18,8 @@ class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime):
             return obj.isoformat()
+        elif isinstance(obj, UUID):
+            return str(obj)
         return super().default(obj)
 
 

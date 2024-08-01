@@ -84,9 +84,9 @@ class MatchString(db.Model):
 class Matches(db.Model):
     __tablename__ = 'matches'
     id = db.Column(UUID(as_uuid=True), primary_key=True)
-    matchcriteriaid = db.Column(UUID(as_uuid=True), db.ForeignKey('matchstring.matchCriteriaId'))
+    matchcriteriaid = db.Column(UUID(as_uuid=True), db.ForeignKey('matchstring.matchcriteriaid'))
     cpename = db.Column(db.String(255), nullable=False)
-    cpenameid = db.Column(UUID(as_uuid=True), db.ForeignKey('cpe.cpeNameId'))
+    cpenameid = db.Column(UUID(as_uuid=True), db.ForeignKey('cpe.cpenameid'))
 
 class CPE(db.Model):
     __tablename__ = 'cpe'
@@ -99,6 +99,6 @@ class CPE(db.Model):
 class Titles(db.Model):
     __tablename__ = 'titles'
     id = db.Column(UUID(as_uuid=True), primary_key=True)
-    cpenameid = db.Column(UUID(as_uuid=True), db.ForeignKey('cpe.cpeNameId'))
+    cpenameid = db.Column(UUID(as_uuid=True), db.ForeignKey('cpe.cpenameid'))
     title = db.Column(db.String(255), nullable=False)
     value = db.Column(db.Text, nullable=False)
