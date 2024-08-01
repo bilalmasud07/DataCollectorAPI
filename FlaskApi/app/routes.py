@@ -1,4 +1,4 @@
-from flask import jsonify, Response
+from flask import jsonify, Response, request
 from app.models import CVE, CVSSMetric, CpeMatch, Nodes, Configurations, SourceType, Matches, MatchString, CPE, Titles, Descriptions, Weaknesses, WeaknessesDescriptions
 import logging
 from sqlalchemy.sql import text
@@ -12,6 +12,12 @@ current_utc_time = datetime.now(timezone.utc)
 
 # Format it as requested
 formatted_time = current_utc_time.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3]
+
+class CustomJSONEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        return super().default(obj)
 
 
 def register_routes(app, db):
@@ -335,6 +341,60 @@ def register_routes(app, db):
 
         except Exception as e:
             logging.error(f"Error in match_strings: {e}")
+            return jsonify({"error": "Internal Server Error"}), 500
+
+    @app.route('/query', methods=['GET'])
+    def query_database():
+        try:
+            # Get table name from query parameters
+            table_name = request.args.get('table')
+            logging.info(f"table name: {table_name}")
+            page = int(request.args.get('page', 1))
+            per_page = int(request.args.get('per_page', 100))
+
+            # Extract filters from query parameters
+            filters = {key.lower(): value for key, value in request.args.items() if key not in ['table', 'page', 'per_page']}
+            logging.info(f"filters: {filters}")
+            # Get the table class from the name
+            table_class = globals().get(table_name)
+
+            if not table_class:
+                return jsonify({"error": "Table not found"}), 404
+
+            # Build the query
+            query = db.session.query(table_class)
+
+            for column, value in filters.items():
+                column_attr = getattr(table_class, column, None)
+                logging.info(f"column_attr: {column_attr}")
+                if column_attr is not None:
+                    logging.info(f"Filtering by {column} with value {value}")
+                    query = query.filter(column_attr == value)
+                else:
+                    logging.info(f"Column {column} not found in table {table_name}")
+                    return jsonify({"error": "Internal Server Error"}), 500
+            # Apply pagination
+            pagination = query.paginate(page=page, per_page=per_page)
+            results = pagination.items
+
+            # Convert results to dictionary
+            results_data = [result.__dict__ for result in results]
+            for result in results_data:
+                result.pop('_sa_instance_state', None)
+
+            data = {
+                'page': page,
+                'per_page': per_page,
+                'total': pagination.total,
+                'pages': pagination.pages,
+                'results': results_data
+            }
+
+            response = Response(json.dumps(data, cls=CustomJSONEncoder), mimetype='application/json')
+            return response, 200
+
+        except Exception as e:
+            logging.error(f"Error in query_database: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
 
     logging.info("Routes have been registered successfully.")
