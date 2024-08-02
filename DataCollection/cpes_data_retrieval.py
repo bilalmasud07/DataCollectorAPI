@@ -61,10 +61,10 @@ def extract_data(api_url, api_key, csv_files, process_function, headers, data_fo
         processed_data = process_function(items)
         update_csv_files(processed_data, csv_files, headers, data_folder)
         
-        start_index += 10000
+        start_index += 10000 # maximum data to be fetched, defined by the API
         log.info(f"total results : {total_results}")
         log.info(f"start_index : {start_index}")
-        time.sleep(6)
+        time.sleep(6) # recommended sleep time between each call by the API
 
 
 if __name__ == "__main__":
