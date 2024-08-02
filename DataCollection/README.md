@@ -25,19 +25,19 @@ these are the 3 API's being used:
 * The CPE Match Criteria API is used to easily retrieve the complete list of valid CPE Match Strings
   `https://services.nvd.nist.gov/rest/json/cpematch/2.0`
 
-5- Open a terminal in the editor go the the directory cd `.../DataCollectorAPI/DataCollection/` and run 1st script named `"cves_data_retrieval.py"` to retrieve data     about CVE. 
-  `python .\cves_data_retrieval.py`
+5- Open a terminal in the editor go the the directory cd `.../DataCollectorAPI/DataCollection/` and run 1st script named `"cves_data_retrieval.py"` to retrieve   
+  data about CVE. `python .\cves_data_retrieval.py`
   After running the script, it will show all the log in file(`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cves_{current_timestamp}.log"` that its    collectiong the data in chunks and after processing it adds into the csv files under directory .../DataCollectorAPI/DataCollection/config/cve_conf.py 
   It will create different csv files and add data into each files. Each csv file represents a table. 
   The information about each table attributes are defined in `.../DataCollectorAPI/DataCollection/config/cve_conf.py` file along with what API is being used.
 
-6- Run 2nd script to fetch all the record of the CPE, under the directory `.../DataCollectorAPI/DataCollection/` and run second script named `"cpes_data_retrieval.py"` to retrieve data about CVE. Run below command to run the script.
+6- Run 2nd script to fetch all the record of the CPE. Change current directory path in the terminal to `.../DataCollectorAPI/DataCollection/` and run second script named `"cpes_data_retrieval.py"` to retrieve data about CPE. Run below command to run the script.
   `python ./cpes_data_retrieval.py`
   After running the script, it will show all the log in file(`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cpes_{current_timestamp}.log"` that its    collectiong the data in chunks and after processing it adds into the csv files under directory `.../DataCollectorAPI/DataCollection/config/cpe_conf.py` 
   It will create different csv files and add data into each files. Each csv file represents a table. 
   The information about each table attribute are defined in `.../DataCollectorAPI/DataCollection/config/cpe_conf.py` file along with what API is being used.
   
-7- Run 3rd script to fetch all the record of the valid CPE Match Strings. Under the directory `.../DataCollectorAPI/DataCollection/`, run third script named `"cpe_match_data_retrieval.py"` to retrieve data about CVE. Run below command to run the script.
+7- Run 3rd script to fetch all the record of the valid CPE Match Strings. Change current directory path in the terminal to `.../DataCollectorAPI/DataCollection/`, run third script named `"cpe_match_data_retrieval.py"` to retrieve data about valid CPE Match Strings. Run below command to run the script.
   `python ./cpe_match_data_retrieval.py`
   After running the script, it will show all the log in file (`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cpe_match_{current_timestamp}.log"`     
   that its collectiong the data in chunks and after processing it adds into the csv files under directory 
