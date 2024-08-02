@@ -28,10 +28,4 @@ Follow these 3 steps sequentially.
 2- Run PostgresDB script, complete instructions are under the directory PostgresDB README.md file
 3- Run FlaskApi script, complete instructions are under the directory FlaskApi README.md file
 
-4- cd .\FlaskApi\
-3- python -m venv venv
-4- .\venv\Scripts\Activate
-5- python.exe -m pip install --upgrade pip
-6- pip install -r requirements.txt
-7- python .\app.py
-8- 
+
