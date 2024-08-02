@@ -27,11 +27,10 @@ these are the 3 API's being used:
 
 4- Open a terminal in the editor go the the directory cd .../DataCollectorAPI/DataCollection/ and run first script named "cves_data_retrieval.py" to retrieve data about CVE.
 `python .\cves_data_retrieval.py`
-After running the script, it will show in the log file(.../DataCollectorAPI/DataCollection/logs/) "data_retrieval_cves_{current_timestamp}.log" that its         
+After running the script, it will show in the log file(`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cves_{current_timestamp}.log"` that its         
  collectiong the data in chunks and after processing it adds into the csv () files under directory .../DataCollectorAPI/DataCollection/config/cve_conf.py 
-It will create different csv files and add data into each files.
-Each csv file represent a table.
-The information about each table ettribute is defined in .../DataCollectorAPI/DataCollection/config/cve_conf.py file along with what API is being used.
+It will create different csv files and add data into each files. Each csv file represents a table. 
+The information about each table ettribute is defined in `.../DataCollectorAPI/DataCollection/config/cve_conf.py` file along with what API is being used.
 
 5- It 
 4- cd .\FlaskApi\
