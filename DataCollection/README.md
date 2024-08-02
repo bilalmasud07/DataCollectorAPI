@@ -25,14 +25,18 @@ these are the 3 API's being used:
 * The CPE Match Criteria API is used to easily retrieve the complete list of valid CPE Match Strings
   `https://services.nvd.nist.gov/rest/json/cpematch/2.0`
 
-5- Open a terminal in the editor go the the directory cd .../DataCollectorAPI/DataCollection/ and run first script named "cves_data_retrieval.py" to retrieve data     about CVE.
-    `python .\cves_data_retrieval.py`
-      After running the script, it will show in the log file(`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cves_{current_timestamp}.log"` that its        
-       collectiong the data in chunks and after processing it adds into the csv () files under directory .../DataCollectorAPI/DataCollection/config/cve_conf.py 
-        It will create different csv files and add data into each files. Each csv file represents a table. 
-          The information about each table ettribute is defined in `.../DataCollectorAPI/DataCollection/config/cve_conf.py` file along with what API is being used.
+5- Open a terminal in the editor go the the directory cd `.../DataCollectorAPI/DataCollection/` and run first script named `"cves_data_retrieval.py"` to retrieve data     about CVE. 
+  `python .\cves_data_retrieval.py`
+  After running the script, it will show in the log file(`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cves_{current_timestamp}.log"` that its        collectiong the data in chunks and after processing it adds into the csv () files under directory .../DataCollectorAPI/DataCollection/config/cve_conf.py 
+  It will create different csv files and add data into each files. Each csv file represents a table. 
+  The information about each table ettribute is defined in `.../DataCollectorAPI/DataCollection/config/cve_conf.py` file along with what API is being used.
 
-5- It 
+6- Run 2 script to fetch all the record of the CPE, under the directory `.../DataCollectorAPI/DataCollection/` and run second script named `"cpes_data_retrieval.py"` to retrieve data about CVE. Run below command to run the script.
+  `python .\cpes_data_retrieval.py`
+  After the running the second script make it clear that 
+  
+7- 
+
 4- cd .\FlaskApi\
 3- python -m venv venv
 4- .\venv\Scripts\Activate
