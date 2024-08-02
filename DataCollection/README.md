@@ -1,6 +1,6 @@
 About DataCollection
 
-This part will collect the data from 3 API's.
+This part will collect the data from three API's.
 
 Follow below steps to follow run datacollection scripts(total 3)
 
@@ -29,22 +29,26 @@ these are the 3 API's being used:
   `python .\cves_data_retrieval.py`
   After running the script, it will show all the log in file(`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cves_{current_timestamp}.log"` that its    collectiong the data in chunks and after processing it adds into the csv files under directory .../DataCollectorAPI/DataCollection/config/cve_conf.py 
   It will create different csv files and add data into each files. Each csv file represents a table. 
-  The information about each table ettribute is defined in `.../DataCollectorAPI/DataCollection/config/cve_conf.py` file along with what API is being used.
+  The information about each table attributes are defined in `.../DataCollectorAPI/DataCollection/config/cve_conf.py` file along with what API is being used.
 
 6- Run 2nd script to fetch all the record of the CPE, under the directory `.../DataCollectorAPI/DataCollection/` and run second script named `"cpes_data_retrieval.py"` to retrieve data about CVE. Run below command to run the script.
   `python ./cpes_data_retrieval.py`
   After running the script, it will show all the log in file(`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cpes_{current_timestamp}.log"` that its    collectiong the data in chunks and after processing it adds into the csv files under directory `.../DataCollectorAPI/DataCollection/config/cpe_conf.py` 
   It will create different csv files and add data into each files. Each csv file represents a table. 
-  The information about each table ettribute is defined in `.../DataCollectorAPI/DataCollection/config/cpe_conf.py` file along with what API is being used.
+  The information about each table attribute are defined in `.../DataCollectorAPI/DataCollection/config/cpe_conf.py` file along with what API is being used.
   
 7- Run 3rd script to fetch all the record of the valid CPE Match Strings. Under the directory `.../DataCollectorAPI/DataCollection/`, run third script named `"cpe_match_data_retrieval.py"` to retrieve data about CVE. Run below command to run the script.
   `python ./cpe_match_data_retrieval.py`
   After running the script, it will show all the log in file (`.../DataCollectorAPI/DataCollection/logs/`) `"data_retrieval_cpe_match_{current_timestamp}.log"`     
   that its collectiong the data in chunks and after processing it adds into the csv files under directory 
   `.../DataCollectorAPI/DataCollection/config/cpe_match_conf.py` It will create different csv files and add data into each files. Each csv file represents a table. 
-  The information about each table ettribute is defined in `.../DataCollectorAPI/DataCollection/config/cpe_conf.py` file along with what API is being used.
+  The information about each table attribute are defined in `.../DataCollectorAPI/DataCollection/config/cpe_match_conf.py` file along with what API is being used.
 
-4- cd .\FlaskApi\
+Step 5, 6, and 7 can be run simentaneuosly as well to generate all data/csv files at the same time.
+
+8- When all the three scripts finished running then follow the next 2nd part which to create database and upload data into database.
+
+8- cd .\FlaskApi\
 3- python -m venv venv
 4- .\venv\Scripts\Activate
 5- python.exe -m pip install --upgrade pip
