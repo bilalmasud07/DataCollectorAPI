@@ -19,7 +19,7 @@ store the API KEY like this exactly and save it.
 4- There are 3 scripts to run to fetch data form the API's.
 these are the 3 API's being used:
 * The CVE API is used to easily retrieve information on a single CVE or a collection of CVE from the NVD
-  h`ttps://services.nvd.nist.gov/rest/json/cves/2.0`
+  `ttps://services.nvd.nist.gov/rest/json/cves/2.0`
 * The CPE API is used to easily retrieve information on a single CPE record or a collection of CPE records from the Official CPE Dictionary
   `https://services.nvd.nist.gov/rest/json/cpes/2.0`
 * The CPE Match Criteria API is used to easily retrieve the complete list of valid CPE Match Strings
@@ -27,7 +27,8 @@ these are the 3 API's being used:
 
 4- Open a terminal in the editor go the the directory cd .../DataCollectorAPI/DataCollection/ and run first script named "cves_data_retrieval.py" to retrieve data about CVE.
 `python .\cves_data_retrieval.py`
-After running the script, it will show in the log file(.../DataCollectorAPI/DataCollection/logs/) "data_retrieval_cves_{current_timestamp}.log" that its collectiong the data in chunks and after processing it adds into the csv () files under directory .../DataCollectorAPI/DataCollection/config/cve_conf.py 
+After running the script, it will show in the log file(.../DataCollectorAPI/DataCollection/logs/) "data_retrieval_cves_{current_timestamp}.log" that its         
+ collectiong the data in chunks and after processing it adds into the csv () files under directory .../DataCollectorAPI/DataCollection/config/cve_conf.py 
 It will create different csv files and add data into each files.
 Each csv file represent a table.
 The information about each table ettribute is defined in .../DataCollectorAPI/DataCollection/config/cve_conf.py file along with what API is being used.
