@@ -243,4 +243,4 @@ FROM 'D:/Study/Job/Cybercube/DataCollection/cve_csv_data/descriptions.csv' DELIM
 ``` 
 
 
-#### After uploading the data, next step is to Run FlaskApi to query data data from the database For detailed instructions, refer to the next README file: [PostgresDB README](../FlaskApi/README.md). 
+#### After uploading the data, next step is to Run FlaskApi to query data data from the database For detailed instructions, refer to the next README file: [FlaskApi README](../FlaskApi/README.md). 
