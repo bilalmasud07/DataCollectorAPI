@@ -402,6 +402,7 @@ http://127.0.0.1:5000/top_attack_vectors
 GET /match_strings/<uuid:matchCriteriaId>
 http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34
 ```
+[GET /match_strings/DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34](http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34)
 
 #### Description
 Retrieves match strings based on the specified match criteria ID.
