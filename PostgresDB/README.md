@@ -227,13 +227,17 @@ To create the tables in the database, follow these steps:
 
 ## Loading Data into the DB
 
-To load data into the database, use the provided SQL scripts to load data from CSV files into the respective tables.
+To load data into the database, use the provided SQL scripts( `cd .../DataCollectorAPI/PostgresDB/DML_Statements.sql` ) to load data from CSV files into the respective tables.
 
 ### Loading CSV Data into PostgreSQL Database
 
-#### Loading data into `CVE` table from `cve.csv` file
+#### Loading data into tables by executing the command inside the file `DML_Statements.sql` 
 
 ```sql
 COPY CVE(cve_id, sourceIdentifier, published, lastModified, vulnStatus)
 FROM 'path/to/cve.csv' DELIMITER '|' CSV HEADER;
 
+COPY Descriptions(id, cve_id, lang, value) 
+FROM 'D:/Study/Job/Cybercube/DataCollection/cve_csv_data/descriptions.csv' DELIMITER '|' CSV HEADER;
+
+.... 
