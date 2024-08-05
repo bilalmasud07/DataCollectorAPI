@@ -1,39 +1,6 @@
 -- 1. Severity Distribution: What is the count of vulnerabilities for different severity levels
-
-select *
-from CVSSMetric 
-where baseseverity = 'CRITICAL' and cve_id ='CVE-2012-5872' ;
-
-select a.cve_id,a.type,a.baseseverity,b.cve_id,b.type,b.baseseverity from
-(select cve_id,baseseverity,type
-from cvssmetric c 
-where c.type = 'Primary') a 
-inner join (select cve_id,baseseverity,type
-from cvssmetric c 
-where c.type = 'Secondary') b
-on a.cve_id = b.cve_id
-and a.baseseverity = b.baseseverity
-
-select cve_id, count(*) 
-from CVSSMetric 
-where baseseverity = 'CRITICAL' 
-group by 1
-having count(*) > 1 
-order by cve_id ;
-
-SELECT cvsm.baseSeverity as baseseverity, COUNT(*) as total_severities
-FROM CVSSMetric cvsm
-JOIN CVE ON cvsm.cve_id = CVE.cve_id
-WHERE CVE.lastmodified < '2024-05-02' and cvsm.type = 'Primary'
-GROUP by baseseverity
-order by 1, 2
-
-SELECT "CVSSMetric"."baseSeverity" AS baseseverity, count("CVSSMetric"."baseSeverity") AS total_severties 
-FROM "CVSSMetric" JOIN "Source_type" ON "CVSSMetric".source_type_id = "Source_type".id JOIN "CVE" ON "CVSSMetric".cve_id = "CVE".cve_id 
-WHERE "CVE"."lastModified" < %(lastModified_1)s::VARCHAR AND "CVE"."vulnStatus" != %(vulnStatus_1)s::VARCHAR AND "Source_type".type = %(type_1)s::VARCHAR GROUP BY "CVSSMetric"."baseSeverity" ORDER BY "CVSSMetric"."baseSeverity";
-
 ;
--- final, assuming ka type primary is to be considered
+-- assuming type primary is to be considered
 SELECT cvsm.baseSeverity as baseseverity, COUNT(*) as total_severities
 FROM CVSSMetric cvsm
 join Source_type st on cvsm.source_type_id = st.id
@@ -44,63 +11,7 @@ order by baseseverity;
 
 
  -- 2.  Worst Products, Platforms : Find out the worst products, platforms with most number of known vulnerabilities
-
-SELECT criteria, COUNT(*) as total_known_vulnerabilities
-FROM CpeMatch
-JOIN Nodes ON CpeMatch.node_id = Nodes.id
-JOIN Configurations ON Nodes.configuration_id = Configurations.id
-JOIN CVE ON Configurations.cve_id = CVE.cve_id
-WHERE CVE.lastModified < '2024-05-02'
-GROUP BY criteria
-ORDER BY total_known_vulnerabilities DESC;
-
-select 
-cp.cpenameid, cp.cpename, cp.lastmodified,
-ms.lastmodified, ms.cpelastmodified, ms.matchcriteriaid,
-cv.lastmodified, cv.cve_id 
-from cpe cp
-inner join Titles t on t.cpenameid = cp.cpenameid 
-inner join matches m on m.cpenameid = cp.cpenameid 
-inner join matchstring ms on ms.matchcriteriaid = m.matchcriteriaid 
-inner join cpematch cpm on cpm.matchcriteriaid = ms.matchcriteriaid 
-inner join nodes n on cpm.node_id = n.id 
-inner join configurations conf on n.configuration_id = conf.id 
-inner join cve cv on conf.cve_id = cv.cve_id 
-WHERE cv.lastModified < '2024-05-02' 
---and cv.vulnstatus != 'Rejected'
-and cp.deprecated = false
-and cv.cve_id = 'CVE-1999-0107'
-;
-
-select  
-c.cve_id , c.lastmodified, 
-cpm.matchcriteriaid,
-ms.lastmodified, ms.cpelastmodified, ms.created,
-m.cpenameid,
-cp.cpename, cp.cpenameid, cp.deprecated, cp.lastmodified, cp.created
-from cve c 
-join configurations conf on c.cve_id = conf.cve_id 
-join nodes n on conf.id = n.configuration_id 
-join cpematch cpm on cpm.node_id = n.id
-join matchstring ms on cpm.matchcriteriaid = ms.matchcriteriaid
-join matches m on cpm.matchcriteriaid = m.matchcriteriaid
-join cpe cp on cp.cpenameid = m.cpenameid 
-where 
-cp.cpenameid = '34BC934B-616A-4246-80B0-F38811D3C593'
---vulnstatus !='Modified' and vulnstatus != 'Analyzed';
---c.cve_id = 'CVE-1999-0107';
---c.cve_id = 'CVE-2011-1171'
-and c.lastModified < '2024-05-02' and c.vulnstatus != 'Rejected'
---and cp.deprecated = false
-;
-
-select * from matches m 
-where m.matchcriteriaid = ''
-
--- check cpelastmodied, lastmodified of matchstring and cpe tables respectively, and check the difference between the two columns
--- 
-
--- final
+-- exclding Rejected status ones and the cpe's which are not deprecated
 select cp.cpename as product, count(*) as total_known_vulnerabilities
 from cpe cp
 inner join Titles t on t.cpenameid = cp.cpenameid 

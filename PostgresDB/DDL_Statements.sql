@@ -1,3 +1,5 @@
+-- cve info
+
 CREATE TABLE CVE (
     cve_id VARCHAR(255) PRIMARY KEY,
     sourceIdentifier VARCHAR(255) NOT NULL,
@@ -68,6 +70,7 @@ CREATE TABLE CpeMatch (
     matchCriteriaId UUID not NULL
 );
 
+-- cpematch info
 
 CREATE TABLE MatchString (
 	matchCriteriaId UUID PRIMARY KEY,
