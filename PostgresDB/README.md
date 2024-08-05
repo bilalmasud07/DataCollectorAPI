@@ -1,9 +1,3 @@
-This part includes:
-* Data Modelling
-* Setting up Postgres database, DDL statements
-* Adding data(csv files) into Postgres database
-
-
 # Vulnerability Management Database
 
 ## Table of Contents
@@ -198,15 +192,36 @@ PostgreSQL is a powerful, open-source object-relational database system that off
 - **Community Support**: PostgreSQL has a large and active community, providing extensive documentation and support.
 - **Extensibility**: Allows the creation of custom functions, operators, and data types.
 
-Given the need for normalization and the volume of data (with some tables containing up to 3 million rows), PostgreSQL is an ideal choice for this project.
+Given the need for normalization and the volume of data, PostgreSQL is an ideal choice for this project.
 
 ### Installation on Windows
 1. Download the PostgreSQL installer from the [official website](https://www.postgresql.org/download/windows/).
 2. Run the installer and follow the setup instructions.
 3. During installation, you will be prompted to set the username and password for the PostgreSQL superuser (default is `postgres`).
-4. After installation, open `pgAdmin` or any other SQL client to connect to the database.
+4. After installation, open **DBeaver** or any other SQL client to connect to the database.
 5. Start the PostgreSQL service:
    - Open the **Services** application from the Start menu.
    - Find `PostgreSQL` in the list, right-click, and select **Start**.
+
+### Connecting to the Database using DBeaver
+1. Download and install **DBeaver** from the [official website](https://dbeaver.io/download/).
+2. Open DBeaver and click on the **New Database Connection** button.
+3. Select **PostgreSQL** from the list of database drivers and click **Next**.
+4. Enter the connection details:
+   - **Host**: `localhost`
+   - **Port**: `5432`
+   - **Database**: `your_database_name`
+   - **Username**: `postgres`
+   - **Password**: `your_password`
+5. Click **Finish** to establish the connection.
+
+## DDL Statements
+To create the tables in the database, follow these steps:
+
+1. Open DBeaver and connect to your PostgreSQL database.
+2. Open a new SQL editor by clicking on the **SQL Editor** button.
+3. Go to the directory cd .../DataCollectorAPI/PostgresDB/
+4. Load the SQL script(DDL_Statements.sql) containing the DDL statements into the editor.
+5. Execute the script by clicking the **Execute SQL Script** button.
 
 
