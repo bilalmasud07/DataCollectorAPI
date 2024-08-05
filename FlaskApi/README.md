@@ -86,10 +86,11 @@ GET /query?table=CVE&vulnstatus=Modified&page=1&per_page=10
 
 ### 2. Retrieve Data by Specific Parameter (Product_ID)
 
-### URL
+### Sample Request
+```bash
 `GET /Product_ID=<uuid:cpename_id>`
 `http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E`
-
+```
 
 ### Description
 Retrieves data based on the specified CPE ID.
@@ -101,3 +102,31 @@ Retrieves data based on the specified CPE ID.
 ```bash
 GET /Product_ID=bae41d20-d4af-4af0-aa7d-3bd04da402a7
 http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E
+```
+
+### Sample Answer
+
+```json
+{
+    "totalResults": 1,
+    "format": "NVD_CPE",
+    "version": "2.0",
+    "timestamp": "2024-08-05T18:24:43.058",
+    "products": [
+        {
+            "cpe": {
+                "deprecated": true,
+                "cpeName": "cpe:2.3:a:rsa:bsafe_crypto-c:-:*:*:*:*:*:*:*",
+                "cpeNameid": "A132CA24-0C21-4D60-BB30-98ACD8D15D6E",
+                "lastModified": "2021-12-15T14:02:52.940",
+                "created": "2007-08-23T21:05:57.937",
+                "titles": [
+                    {
+                        "title": "RSA BSAFE Crypto-C"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
