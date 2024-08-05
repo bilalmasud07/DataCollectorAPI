@@ -221,7 +221,19 @@ To create the tables in the database, follow these steps:
 1. Open DBeaver and connect to your PostgreSQL database.
 2. Open a new SQL editor by clicking on the **SQL Editor** button.
 3. Go to the directory cd .../DataCollectorAPI/PostgresDB/
-4. Load the SQL script(DDL_Statements.sql) containing the DDL statements into the editor.
+4. Load the SQL script( `DDL_Statements.sql` ) containing the DDL statements into the editor.
 5. Execute the script by clicking the **Execute SQL Script** button.
 
+
+## Loading Data into the DB
+
+To load data into the database, use the provided SQL scripts to load data from CSV files into the respective tables.
+
+### Loading CSV Data into PostgreSQL Database
+
+#### Loading data into `CVE` table from `cve.csv` file
+
+```sql
+COPY CVE(cve_id, sourceIdentifier, published, lastModified, vulnStatus)
+FROM 'path/to/cve.csv' DELIMITER '|' CSV HEADER;
 
