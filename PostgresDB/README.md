@@ -240,4 +240,7 @@ FROM 'path/to/cve.csv' DELIMITER '|' CSV HEADER;
 COPY Descriptions(id, cve_id, lang, value) 
 FROM 'D:/Study/Job/Cybercube/DataCollection/cve_csv_data/descriptions.csv' DELIMITER '|' CSV HEADER;
 
-.... 
+``` 
+
+
+#### After uploading the data, next step is to Run FlaskApi to query data data from the database For detailed instructions, refer to the next README file: [PostgresDB README](../FlaskApi/README.md). 
