@@ -4,7 +4,7 @@ import logging
 #from sqlalchemy.sql import text
 from datetime import datetime, timezone
 import json
-from sqlalchemy import func
+from sqlalchemy import func, and_
 from collections import defaultdict
 from uuid import UUID
 from app import cache
@@ -187,16 +187,23 @@ def register_routes(app, db):
             # Ensure the date is a datetime object
             cutoff_date = datetime.strptime('2024-05-02', '%Y-%m-%d')
 
-            result = db.session.query(
-                CVE.cve_id,
-                CVSSMetric.exploitabilityscore
-            ).join(CVSSMetric, CVSSMetric.cve_id == CVE.cve_id)\
-            .filter(CVE.lastmodified < cutoff_date)\
-            .filter(CVE.vulnstatus != 'Rejected')\
-            .order_by(CVSSMetric.exploitabilityscore.desc(), CVE.cve_id)\
-            .limit(10).all()
-
-            data = [{'cve_id': row.cve_id, 'exploitabilityScore': row.exploitabilityscore} for row in result]
+            results = db.session.query(
+                        CVSSMetric.baseseverity,
+                        func.count().label('total_severities')
+                        ).join(SourceType, CVSSMetric.source_type_id == SourceType.id)\
+                        .join(CVE, CVSSMetric.cve_id == CVE.cve_id)\
+                        .filter( 
+                                and_(
+                                    CVE.lastmodified < cutoff_date,
+                                    CVE.vulnstatus != 'Rejected',
+                                    SourceType.type == 'Primary'
+                                )
+                        )\
+                        .group_by(CVSSMetric.baseseverity)\
+                        .order_by(CVSSMetric.baseseverity)\
+                        .all()
+            
+            data = [{'baseseverity': row.baseseverity, 'total_severities': row.total_severities} for row in results]
             response = Response(json.dumps(data), mimetype='application/json')
             return response, 200
         except Exception as e:
