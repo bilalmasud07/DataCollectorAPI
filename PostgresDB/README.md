@@ -12,7 +12,13 @@ This part includes:
 - [Data Model Explanation](#data-model-explanation)
 - [Columns and Tables Explanation](#columns-and-tables-explanation)
 - [Data Model Diagram](#data-model-diagram)
+- [Connection to Postgres DB](#connection-to-postgres-db)
+  - [Why PostgreSQL](#why-postgresql)
+  - [Installation on Windows](#installation-on-windows)
+  - [Installation on Mac](#installation-on-mac)
+  - [Connecting to the Database](#connecting-to-the-database)
 - [DDL Statements](#ddl-statements)
+- [Loading Data into the DB](#loading-data-into-the-db)
 
 ## Introduction
 This README file provides a comprehensive overview of the vulnerability management database, including ETL design, data model, and detailed explanation of tables and columns. This database is designed to store information about Common Vulnerabilities and Exposures (CVEs), their descriptions, related metrics, configurations, and other relevant data.
@@ -183,19 +189,24 @@ The data model consists of several interconnected tables designed to store detai
 
 ## Connection to Postgres DB
 
+### Why PostgreSQL
+PostgreSQL is a powerful, open-source object-relational database system that offers several advantages for managing the vulnerability database:
+
+- **Scalability**: PostgreSQL can handle large datasets, making it suitable for a database with millions of rows.
+- **ACID Compliance**: Ensures data integrity and reliability by supporting transactions.
+- **Advanced Features**: Includes support for advanced data types, indexing techniques, and performance optimization features.
+- **Community Support**: PostgreSQL has a large and active community, providing extensive documentation and support.
+- **Extensibility**: Allows the creation of custom functions, operators, and data types.
+
+Given the need for normalization and the volume of data (with some tables containing up to 3 million rows), PostgreSQL is an ideal choice for this project.
+
 ### Installation on Windows
 1. Download the PostgreSQL installer from the [official website](https://www.postgresql.org/download/windows/).
 2. Run the installer and follow the setup instructions.
 3. During installation, you will be prompted to set the username and password for the PostgreSQL superuser (default is `postgres`).
 4. After installation, open `pgAdmin` or any other SQL client to connect to the database.
-5. Create a new database by right-clicking on `Databases` and selecting `Create > Database...`. Name your database (e.g., `vulnerability_db`).
+5. Start the PostgreSQL service:
+   - Open the **Services** application from the Start menu.
+   - Find `PostgreSQL` in the list, right-click, and select **Start**.
 
-### Installation on Mac
-1. Download PostgreSQL using Homebrew:
-   ```sh
-   brew install postgresql
-- **CPE**: Stores information about CPE names. Linked to `Matches` and `Titles`.
 
-- **Titles**: Linked to `CPE` through `cpeNameId`. Stores titles and descriptions for CPE names.
-
-This diagram provides a visual representation of how the data is structured and interconnected within the database, ensuring comprehensive tracking and management of vulnerabilities.
