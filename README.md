@@ -1,7 +1,3 @@
-This repo contains end-to-end data pipelines, from data collection to storage, and finally, to data retrieval through a custom API. 
-This project involves working with an open API, storing the collected data in a Postgres database, and Flask API to query and analyze the stored data.
-
-
 ## About DataCollectorAPI
 
 The aim of this project is to develop end-to-end data pipelines that span the entire process from data collection to storage, and ultimately to data retrieval through a bespoke API. The project entails interacting with an open API to gather data, storing this data in a PostgreSQL database, and creating a REST API for querying and analyzing the stored data.
@@ -14,7 +10,7 @@ To achieve this, the project will involve:
 
 This project combines multiple aspects of data engineering, from initial data extraction and storage to the creation of an accessible and functional API, aiming to provide a streamlined, end-to-end data solution.
 
-### Steps to Set Up and Run the Project
+### Steps to Set up and Run the Project
 
 1. **Request an API Key**:
    - Request an API key using this link: [NVD API Key Request](https://nvd.nist.gov/developers/request-an-api-key).
@@ -23,16 +19,11 @@ This project combines multiple aspects of data engineering, from initial data ex
 2. **Download the GitHub Repository**:
    - Download this GitHub repository to your computer. Downloading might take some time because it already includes files with data in it. However, it will regenerate the data as well, and that's the next step.
 
-3. **Navigate to the Repository Folder**:
-   - Go to the downloaded repository folder:
-     ```sh
-     cd path/to/DataCollectorAPI
-     ```
 
 There are three main parts inside the project:
 1. Collecting the data from the APIs.
 2. Designing and populating the database (schema, data loading scripts).
-3. Running the Flask API to show data from the created database.
+3. Running the REST API (Flask) to show data from the created database.
 
 Follow these three steps sequentially:
 
