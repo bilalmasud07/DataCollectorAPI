@@ -32,5 +32,3 @@ Follow these 3 steps sequentially.
 3- Run FlaskApi script, complete instructions are under the directory FlaskApi README.md file
 
 
-
-
