@@ -20,8 +20,21 @@ This README file provides a comprehensive overview of the vulnerability manageme
 The ETL (Extract, Transform, Load) process for this database involves the following steps:
 
 ### Extract
-- **Source**: Data is extracted from various vulnerability data feeds, such as the National Vulnerability Database (NVD) and other trusted sources.
-- **Data Types**: The extracted data includes CVE information, descriptions, metrics, weaknesses, configurations, and match criteria.
+- **Source**: Data is extracted from the National Vulnerability Database (NVD) using three specific APIs:
+  - **CVE Information**: Retrieved from the API at `https://services.nvd.nist.gov/rest/json/cves/2.0`. This API provides detailed information about vulnerabilities, including their descriptions, metrics, weaknesses, and configurations.
+  - **CPE Information**: Retrieved from the API at `https://services.nvd.nist.gov/rest/json/cpes/2.0`. This API allows for the retrieval of detailed information on individual CPE records or collections of CPE records, which are essential for identifying vulnerable software and hardware configurations.
+  - **Match Criteria Information**: Retrieved from the API at `https://services.nvd.nist.gov/rest/json/cpematch/2.0`. This API provides the complete list of valid CPE Match Strings, which are used to identify specific criteria for matching CPE records against vulnerabilities.
+
+- **Data Types**: The extracted data includes various types of information, such as:
+  - **CVE Information**: Includes the CVE ID, source identifier, publication date, last modified date, and vulnerability status. This data is stored in the `CVE` table.
+  - **Descriptions**: Textual descriptions of CVEs in different languages, stored in the `Descriptions` table.
+  - **Metrics**: CVSS metrics, including exploitability score, impact score, attack vector, base score, and severity, stored in the `CVSSMetric` table.
+  - **Weaknesses**: Information about weaknesses related to each CVE, stored in the `Weaknesses` table.
+  - **Configurations**: Configuration settings related to each CVE, stored in the `Configurations` table.
+  - **Nodes and CPE Match Information**: Configuration nodes and criteria used for matching CPE records against vulnerabilities, stored in the `Nodes` and `CpeMatch` tables respectively.
+  - **CPE Information**: Includes CPE names, their status (e.g., deprecated or not), and timestamps, stored in the `CPE` table.
+  - **Match Criteria**: Information about match criteria for CPEs, including criteria strings and their statuses, stored in the `MatchString` table.
+
 
 ### Transform
 - **Data Cleaning**: Removing duplicates, handling missing values, and normalizing data formats.
