@@ -231,7 +231,7 @@ To load data into the database, use the provided SQL scripts( `cd .../DataCollec
 
 ### Loading CSV Data into PostgreSQL Database
 
-#### Loading data into tables by executing the command inside the file `DML_Statements.sql` 
+#### Loading data into tables by executing the command inside the file `DML_Statements.sql` some of the commands are shown below: 
 
 ```sql
 COPY CVE(cve_id, sourceIdentifier, published, lastModified, vulnStatus)
