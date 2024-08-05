@@ -10,14 +10,6 @@ To achieve this, the project will involve:
 
 This project combines multiple aspects of data engineering, from initial data extraction and storage to the creation of an accessible and functional API, aiming to provide a streamlined, end-to-end data solution.
 
-### Steps to Set up and Run the Project
-
-1. **Request an API Key**:
-   - Request an API key using this link: [NVD API Key Request](https://nvd.nist.gov/developers/request-an-api-key).
-   - The API key will be received via the provided email address.
-
-2. **Download the GitHub Repository**:
-   - Download this GitHub repository to your computer. Downloading might take some time because it already includes files with data in it. However, it will regenerate the data as well, and that's the next step.
 
 
 ### There are three main parts inside the project:
