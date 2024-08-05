@@ -12,6 +12,7 @@ This part includes:
 - [Data Model Explanation](#data-model-explanation)
 - [Columns and Tables Explanation](#columns-and-tables-explanation)
 - [Data Model Diagram](#data-model-diagram)
+- DDL Statements
 
 ## Introduction
 This README file provides a comprehensive overview of the vulnerability management database, including ETL design, data model, and detailed explanation of tables and columns. This database is designed to store information about Common Vulnerabilities and Exposures (CVEs), their descriptions, related metrics, configurations, and other relevant data.
@@ -152,3 +153,49 @@ The data model consists of several interconnected tables designed to store detai
 
 ## Data Model Diagram
 ![Data Model Diagram](https://github.com/bilalmasud07/DataCollectorAPI/blob/main/Vulnarabilities.png)
+
+- **Vulnerabilities**: Central table storing main CVE information. It is related to:
+  - **Descriptions**: Each CVE can have multiple descriptions in different languages. Linked via `cve_id`.
+  - **CVSSMetric**: Each CVE can have multiple CVSS metrics. Linked via `cve_id`.
+  - **Weaknesses**: Each CVE can have multiple weaknesses. Linked via `cve_id`.
+  - **Configurations**: Each CVE can have multiple configurations. Linked via `cve_id`.
+
+- **Descriptions**: Linked to `Vulnerabilities` through `cve_id`. Stores multilingual descriptions of CVEs.
+
+- **CVSSMetric**: Linked to `Vulnerabilities` through `cve_id` and to `Source_type` through `source_type_id`. Stores CVSS metrics.
+
+- **Source_type**: Linked to `CVSSMetric`. Stores information about the source of the CVSS metric.
+
+- **Weaknesses**: Linked to `Vulnerabilities` through `cve_id`. Stores information about weaknesses.
+
+- **Weaknesses_Descriptions**: Linked to `Weaknesses` through `weakness_id`. Stores descriptions of weaknesses in different languages.
+
+- **Configurations**: Linked to `Vulnerabilities` through `cve_id`. Stores configuration settings.
+
+- **Nodes**: Linked to `Configurations` through `configuration_id`. Stores nodes related to configurations.
+
+- **CpeMatch**: Linked to `Nodes` through `node_id` and to `MatchString` through `matchCriteriaId`. Stores CPE match information.
+
+- **MatchString**: Linked to `CpeMatch` and `Matches`. Stores match criteria for CPEs.
+
+- **Matches**: Linked to `MatchString` through `matchCriteriaId` and to `CPE` through `cpeNameId`. Stores match details for CPE names.
+
+
+## Connection to Postgres DB
+
+### Installation on Windows
+1. Download the PostgreSQL installer from the [official website](https://www.postgresql.org/download/windows/).
+2. Run the installer and follow the setup instructions.
+3. During installation, you will be prompted to set the username and password for the PostgreSQL superuser (default is `postgres`).
+4. After installation, open `pgAdmin` or any other SQL client to connect to the database.
+5. Create a new database by right-clicking on `Databases` and selecting `Create > Database...`. Name your database (e.g., `vulnerability_db`).
+
+### Installation on Mac
+1. Download PostgreSQL using Homebrew:
+   ```sh
+   brew install postgresql
+- **CPE**: Stores information about CPE names. Linked to `Matches` and `Titles`.
+
+- **Titles**: Linked to `CPE` through `cpeNameId`. Stores titles and descriptions for CPE names.
+
+This diagram provides a visual representation of how the data is structured and interconnected within the database, ensuring comprehensive tracking and management of vulnerabilities.
