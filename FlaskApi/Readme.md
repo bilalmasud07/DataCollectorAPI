@@ -24,8 +24,13 @@ API key will be received via the provided email address.
 There are 3 main parts inside the project, one is to collect the data from the API's and another one is to use the design database(schema, data loading scripts) and the last one is run FlaskApi to shows data from the created database.
 
 Follow these 3 steps sequentially.
+
 1- Run DataColection script, complete instructions are under the directory DataCollection README.md file
+
 2- Run PostgresDB script, complete instructions are under the directory PostgresDB README.md file
+
 3- Run FlaskApi script, complete instructions are under the directory FlaskApi README.md file
+
+
 
 
