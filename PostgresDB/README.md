@@ -138,4 +138,4 @@ The data model consists of several interconnected tables designed to store detai
 - **value**: Description text of the title.
 
 ## Data Model Diagram
-![Data Model Diagram]([URL_OF_THE_UPLOADED_IMAGE](https://github.com/bilalmasud07/DataCollectorAPI/blob/main/Vulnarabilities.png))
+![Data Model Diagram](https://github.com/bilalmasud07/DataCollectorAPI/blob/main/Vulnarabilities.png)
