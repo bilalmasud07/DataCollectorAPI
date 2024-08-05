@@ -93,7 +93,7 @@ http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E
 ```
 
 ### Description
-Retrieves data based on the specified CPE ID.
+Retrieves data based on the specified Product ID.
 
 ### Parameters
 - `Product_ID` (UUID, required): The ID of the CPE to retrieve.
@@ -131,9 +131,7 @@ Retrieves data based on the specified CPE ID.
 ### 3.1 Severity Distribution
 
 #### URL
-`GET /severity_distribution`
-
-`http://127.0.0.1:5000/severity_distribution`
+[GET /severity_distribution](http://127.0.0.1:5000/severity_distribution)
 
 
 #### Description
@@ -141,7 +139,7 @@ Provides the count of vulnerabilities for different severity levels.
 
 #### Sample Request
 ```bash
-[GET /severity_distribution](http://127.0.0.1:5000/severity_distribution)
+http://127.0.0.1:5000/severity_distribution
 ```
 
 ### Sample Answer
@@ -169,9 +167,7 @@ Provides the count of vulnerabilities for different severity levels.
 
 ### 3.2 Worst Products and Platforms
 #### URL
-`GET /worst_products_platforms`
-
-`http://127.0.0.1:5000/worst_products_platforms`
+[GET /worst_products_platforms](http://127.0.0.1:5000/worst_products_platforms)
 
 
 #### Description
@@ -179,7 +175,7 @@ Finds out the worst products and platforms with the most number of known vulnera
 
 #### Sample Request
 ```bash
-[GET /severity_distribution](http://127.0.0.1:5000/severity_distribution)](http://127.0.0.1:5000/worst_products_platforms)
+http://127.0.0.1:5000/worst_products_platforms
 ```
 
 ### Sample Answer
@@ -232,7 +228,7 @@ Finds out the worst products and platforms with the most number of known vulnera
 
 ### 3.3 Top 10 Vulnerabilities with the Highest Impact
 #### URL
-GET /top_vulnerabilities_highest_impact
+[GET /top_vulnerabilities_highest_impact](http://127.0.0.1:5000/top_vulnerabilities_highest_impact)
 
 
 #### Description
@@ -240,7 +236,7 @@ Lists the top 10 vulnerabilities that have the highest impact.
 
 #### Sample Request
 ```bash
-[http://127.0.0.1:5000/top_vulnerabilities_highest_impact](http://127.0.0.1:5000/top_vulnerabilities_highest_impact)
+http://127.0.0.1:5000/top_vulnerabilities_highest_impact
 ```
 
 ### Sample Answer
@@ -293,7 +289,7 @@ Lists the top 10 vulnerabilities that have the highest impact.
 
 ### 3.4 Top 10 Vulnerabilities with the Highest Impact
 #### URL
-GET /top_vulnerabilities_highest_exploitability
+[GET /top_vulnerabilities_highest_exploitability](http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability)
 
 
 #### Description
@@ -301,7 +297,7 @@ Lists the top 10 vulnerabilities that have the highest impact.
 
 #### Sample Request
 ```bash
-[http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability](http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability)
+http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability
 ```
 
 ### Sample Answer
@@ -355,7 +351,7 @@ Lists the top 10 vulnerabilities that have the highest impact.
 
 ### 3.5 Top 10 Attack Vectors Used
 #### URL
-GET /top_attack_vectors
+[GET /top_attack_vectors](http://127.0.0.1:5000/top_attack_vectors)
 
 
 #### Description
@@ -391,11 +387,8 @@ http://127.0.0.1:5000/top_attack_vectors
 
 
 ## 4. Match Strings by Criteria ID
+
 ### URL
-```bash
-GET /match_strings/<uuid:matchCriteriaId>
-http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34
-```
 [GET /match_strings/DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34](http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34)
 
 #### Description
@@ -407,7 +400,7 @@ matchCriteriaId (UUID, required): The match criteria ID to retrieve.
 
 #### Sample Request
 ```bash
-(http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34)
+http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34
 ```
 
 ### Sample Answer
