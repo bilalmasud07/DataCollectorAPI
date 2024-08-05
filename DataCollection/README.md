@@ -62,5 +62,5 @@ Follow the steps below to run DataCollection scripts (total 3):
 **Note**: Steps 5, 6, and 7 can be run simultaneously to generate all data/CSV files at the same time.
 
 8. **Proceed to the Next Part**:
-   - Once all three scripts have finished running, proceed to the second part, which involves creating the database and uploading data into the database.
+   - Once all three scripts have finished running, proceed to the second part [README.md](PostgresDB/README.md), which involves creating the database and uploading data into the database.
 
