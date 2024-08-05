@@ -29,6 +29,7 @@ def register_routes(app, db):
     def index():
         return jsonify({"message": "Welcome to the CVE API!"}), 200
 
+
     @cache.cached(timeout=60, key_prefix='cpe_%s')
     @app.route('/Product_ID=<uuid:cpename_id>', methods=['GET'])
     def get_cpe(cpename_id):
@@ -74,13 +75,15 @@ def register_routes(app, db):
             logging.error(f"Error in get_cpe: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
 
+
+    @cache.cached(timeout=60, key_prefix='cve_%s')
     @app.route('/CVE_ID=<string:cveid>', methods=['GET'])
     def get_cve(cveid):
         try:
             cve = db.session.query(CVE).filter_by(cve_id=cveid).first()
             if not cve:
                 return jsonify({"error": f"CVE with ID {cveid} not found."}), 404
-
+            
             descriptions = db.session.query(Descriptions).filter_by(cve_id=cveid).all()
             cvss_metrics = db.session.query(CVSSMetric).filter_by(cve_id=cveid).all()
             weaknesses = db.session.query(Weaknesses).filter_by(cve_id=cveid).all()
@@ -175,6 +178,7 @@ def register_routes(app, db):
             return jsonify({"error": "Internal Server Error"}), 500
 
 
+    @cache.cached(timeout=60)
     @app.route('/severity_distribution', methods=['GET'])
     def severity_distribution():
         try:
@@ -200,6 +204,7 @@ def register_routes(app, db):
             return jsonify({"error": "Internal Server Error"}), 500
 
 
+    @cache.cached(timeout=60)
     @app.route('/worst_products_platforms', methods=['GET'])
     def worst_products_platforms():
         try:
@@ -230,6 +235,8 @@ def register_routes(app, db):
             logging.error(f"Error in worst_products_platforms: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
 
+
+    @cache.cached(timeout=60)
     @app.route('/top_vulnerabilities_highest_impact', methods=['GET'])
     def top_vulnerabilities_highest_impact():
         try:
@@ -253,6 +260,8 @@ def register_routes(app, db):
             logging.error(f"Error in top_vulnerabilities_highest_impact: {e}")
             return jsonify({"error": "Internal Server Error"}), 500
 
+
+    @cache.cached(timeout=60)
     @app.route('/top_vulnerabilities_highest_exploitability', methods=['GET'])
     def top_vulnerabilities_highest_exploitability():
         try:
