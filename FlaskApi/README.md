@@ -69,14 +69,10 @@ Queries data from the specified table in the database with optional filters and 
 #### Sample Requests
 
 1. **Simple Query**:
-
-GET /query?table=CVE&page=1&per_page=10
 [GET /query?table=CVE&page=1&per_page=10](http://127.0.0.1:5000/query?table=CVE&page=1&per_page=100)
 
 
 2. **Equality Filter**:
-
-GET /query?table=CVE&vulnstatus=Modified&page=1&per_page=10
 [http://127.0.0.1:5000/query?table=CVE&vulnStatus=Modified&page=1&per_page=100](http://127.0.0.1:5000/query?table=CVE&vulnStatus=Modified&page=1&per_page=100)
 
 
