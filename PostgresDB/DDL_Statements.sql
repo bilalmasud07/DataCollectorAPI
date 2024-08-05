@@ -68,21 +68,6 @@ CREATE TABLE CpeMatch (
     matchCriteriaId UUID not NULL
 );
 
-DROP TABLE CVE;
-DROP TABLE Descriptions;
-DROP TABLE CVSSMetric;
-DROP TABLE Weaknesses;
-DROP table Weaknesses_Descriptions;
-DROP table Source_type;
-DROP TABLE Configurations;
-DROP table Nodes;
-DROP table CpeMatch;
-
-drop table matches;
-drop table matchstring;
-
-drop table CPE;
-drop table Titles;
 
 CREATE TABLE MatchString (
 	matchCriteriaId UUID PRIMARY KEY,
