@@ -1,13 +1,26 @@
-About DataCollectorAPI
+# About FlaskApi
 
-The aim of this project is to develop end-to-end data pipelines that span the entire process from data collection to storage, and ultimately to data retrieval through a bespoke API. The project entails interacting with an open API to gather data, storing this data in a PostgreSQL database, and creating a REST API for querying and analyzing the stored data.
 
-To achieve this, the project will involve:
+## Table of Contents
+- [Introduction](#introduction)
+- [How to Setup/ Use the API](#??)
+- [API Documentation](#api-documentation)
+- 
 
-Data Collection: Leveraging an open API to gather the necessary data. This involves setting up mechanisms to interact with the API and handle data extraction.
-Data Storage: Utilizing a PostgreSQL database to securely store the collected data. This includes designing the database schema and implementing data storage solutions to ensure efficient data management and retrieval.
-API Development: Developing a custom REST API using flask framework that will provide endpoints for querying and analyzing the stored data. This involves defining the API architecture, implementing the necessary endpoints, and ensuring the API can handle various query requests efficiently.
-This project combines multiple aspects of data engineering, from initial data extraction and storage to the creation of an accessible and functional API, aiming to provide a streamlined, end-to-end data solution​
+
+## Introduction
+This README file provides a comprehensive overview of the RestApi, including how to set up and use the API, including starting the server and making requests. API Documentation: Document your API’s endpoints, including request methods, parameters, and sample responses.
+
+
+## How to Setup/ Use the API
+In order to setup and use the API follow these steps:
+1- Go to the directory cd ../DataCollectorAPI/FlaskApi/ 
+2- python -m venv venv 
+3- .\venv\Scripts\Activate   # fow windows 11 on cmd
+4- python.exe -m pip install --upgrade pip 
+5- pip install -r requirements.txt 
+6- python .\app.py
+
 
 
 
