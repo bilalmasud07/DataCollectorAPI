@@ -3,7 +3,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [How to Setup/ Use the API](#??)
+- [How to Setup/ Use the API](#how-to-setup/-use-the-api)
 - [API Documentation](#api-documentation)
 - 
 
@@ -40,7 +40,7 @@ explain what below command does
 
 
 
-# Flask API Documentation
+# API Documentation
 
 ## Overview
 
