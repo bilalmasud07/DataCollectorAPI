@@ -11,6 +11,7 @@ This part includes:
 - [ETL Design](#etl-design)
 - [Data Model Explanation](#data-model-explanation)
 - [Columns and Tables Explanation](#columns-and-tables-explanation)
+- [Data Model Diagram](#data-model-diagram)
 
 ## Introduction
 This README file provides a comprehensive overview of the vulnerability management database, including ETL design, data model, and detailed explanation of tables and columns. This database is designed to store information about Common Vulnerabilities and Exposures (CVEs), their descriptions, related metrics, configurations, and other relevant data.
@@ -135,3 +136,6 @@ The data model consists of several interconnected tables designed to store detai
 - **cpeNameId**: Foreign key, references `CPE(cpeNameId)`.
 - **title**: Title of the CPE.
 - **value**: Description text of the title.
+
+## Data Model Diagram
+![Data Model Diagram](URL_OF_THE_UPLOADED_IMAGE)
