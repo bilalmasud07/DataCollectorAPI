@@ -130,3 +130,233 @@ http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E
     ]
 }
 ```
+
+
+## 3. Analytical Questions
+
+### 3.1 Severity Distribution
+
+#### URL
+`GET /severity_distribution`
+
+`http://127.0.0.1:5000/severity_distribution`
+
+
+#### Description
+Provides the count of vulnerabilities for different severity levels.
+
+#### Sample Request
+```bash
+[GET /severity_distribution](http://127.0.0.1:5000/severity_distribution)
+```
+
+### Sample Answer
+
+```json
+[
+    {
+        "baseseverity": "CRITICAL",
+        "total_severities": 22005
+    },
+    {
+        "baseseverity": "HIGH",
+        "total_severities": 90393
+    },
+    {
+        "baseseverity": "LOW",
+        "total_severities": 7950
+    },
+    {
+        "baseseverity": "MEDIUM",
+        "total_severities": 98428
+    }
+]
+```
+
+### 3.2 Worst Products and Platforms
+#### URL
+`GET /worst_products_platforms`
+
+`http://127.0.0.1:5000/worst_products_platforms`
+
+
+#### Description
+Finds out the worst products and platforms with the most number of known vulnerabilities.
+
+#### Sample Request
+```bash
+[GET /severity_distribution](http://127.0.0.1:5000/severity_distribution)](http://127.0.0.1:5000/worst_products_platforms)
+```
+
+### Sample Answer
+
+```json
+[
+    {
+        "product": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+        "total_known_vulnerabilities": 3585
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:-:*:*:standard:*:x86:*",
+        "total_known_vulnerabilities": 2659
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:-:*:*:essentials:*:x86:*",
+        "total_known_vulnerabilities": 2659
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:-:*:*:essentials:*:x64:*",
+        "total_known_vulnerabilities": 2659
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:-:*:*:datacenter:*:x86:*",
+        "total_known_vulnerabilities": 2659
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:-:*:*:datacenter:*:x64:*",
+        "total_known_vulnerabilities": 2659
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:-:*:*:multipoint_premium_server:*:x86:*",
+        "total_known_vulnerabilities": 2659
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:-:*:*:multipoint_premium_server:*:x64:*",
+        "total_known_vulnerabilities": 2659
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:-:*:*:standard:*:x64:*",
+        "total_known_vulnerabilities": 2659
+    },
+    {
+        "product": "cpe:2.3:o:microsoft:windows_server_2016:-:*:*:*:*:*:*:*",
+        "total_known_vulnerabilities": 2659
+    }
+]
+```
+
+
+### 3.3 Top 10 Vulnerabilities with the Highest Impact
+#### URL
+GET /top_vulnerabilities_highest_impact
+
+
+#### Description
+Lists the top 10 vulnerabilities that have the highest impact.
+
+#### Sample Request
+```bash
+[http://127.0.0.1:5000/top_vulnerabilities_highest_impact](http://127.0.0.1:5000/top_vulnerabilities_highest_impact)
+```
+
+### Sample Answer
+
+```json
+[
+    {
+        "cve_id": "CVE-1999-0002",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0003",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0005",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0006",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0008",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0009",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0011",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0014",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0018",
+        "impactScore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0022",
+        "impactScore": 10
+    }
+]
+```
+
+
+### 3.4 Top 10 Vulnerabilities with the Highest Impact
+#### URL
+GET /top_vulnerabilities_highest_exploitability
+
+
+#### Description
+Lists the top 10 vulnerabilities that have the highest impact.
+
+#### Sample Request
+```bash
+[http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability](http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability)
+```
+
+### Sample Answer
+
+
+```json
+[
+    {
+        "cve_id": "CVE-1999-0001",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0002",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0003",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0004",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0005",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0006",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0007",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0008",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0009",
+        "exploitabilityscore": 10
+    },
+    {
+        "cve_id": "CVE-1999-0010",
+        "exploitabilityscore": 10
+    }
+]
+```
+
+
+
