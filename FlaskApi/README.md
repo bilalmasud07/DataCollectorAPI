@@ -124,6 +124,8 @@ Retrieves data based on the specified Product ID.
 
 ## 3. Analytical Questions
 
+### For all the analytical quetions data is not being used which is collected after 05-01-2024. 
+
 ### 3.1 Severity Distribution
 
 #### URL
