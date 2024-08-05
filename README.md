@@ -20,7 +20,8 @@ This project combines multiple aspects of data engineering, from initial data ex
    - Download this GitHub repository to your computer. Downloading might take some time because it already includes files with data in it. However, it will regenerate the data as well, and that's the next step.
 
 
-There are three main parts inside the project:
+### There are three main parts inside the project:
+
 1. Collecting the data from the APIs.
 2. Designing and populating the database (schema, data loading scripts).
 3. Running the REST API (Flask) to show data from the created database.
