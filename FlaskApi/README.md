@@ -359,4 +359,86 @@ Lists the top 10 vulnerabilities that have the highest impact.
 ```
 
 
+### 3.5 Top 10 Attack Vectors Used
+#### URL
+GET /top_attack_vectors
 
+
+#### Description
+Lists the top 10 attack vectors used.
+
+#### Sample Request
+```bash
+http://127.0.0.1:5000/top_attack_vectors
+```
+
+### Sample Answer
+
+```json
+[
+    {
+        "attackVector": "NETWORK",
+        "total_count": 192731
+    },
+    {
+        "attackVector": "LOCAL",
+        "total_count": 51870
+    },
+    {
+        "attackVector": "ADJACENT_NETWORK",
+        "total_count": 6558
+    },
+    {
+        "attackVector": "PHYSICAL",
+        "total_count": 1927
+    }
+]
+```
+
+
+## 4. Match Strings by Criteria ID
+### URL
+```bash
+GET /match_strings/<uuid:matchCriteriaId>
+http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34
+```
+
+#### Description
+Retrieves match strings based on the specified match criteria ID.
+
+#### Parameters
+matchCriteriaId (UUID, required): The match criteria ID to retrieve.
+
+
+#### Sample Request
+```bash
+(http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34)
+```
+
+### Sample Answer
+```json
+{
+    "totalResults": 1,
+    "format": "NVD_CPEMatchString",
+    "version": "2.0",
+    "timestamp": "2024-08-06T01:22:06.556",
+    "matchStrings": [
+        {
+            "matchString": {
+                "matchCriteriaId": "DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34",
+                "criteria": "cpe:2.3:o:cisco:ios:12.1\\(14\\)e7:*:*:*:*:*:*:*",
+                "lastModified": "2019-06-17T09:16:33.960",
+                "cpeLastModified": "2019-07-22T16:37:38.133",
+                "created": "2019-06-17T09:16:33.960",
+                "status": "Active",
+                "matches": [
+                    {
+                        "cpeName": "cpe:2.3:o:cisco:ios:12.1\\(14\\)e7:*:*:*:*:*:*:*",
+                        "cpeNameId": "39BF6108-A2CE-41D9-BF76-F30DD64219CD"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
