@@ -51,8 +51,7 @@ This API allows querying data stored in the database with flexible filtering, pa
 ### 1. Query Data from Database
 
 #### URL
-
-`GET /query`
+[GET /query](http://127.0.0.1:5000/query?table=CVE&page=1&per_page=100)
 
 #### Description
 
@@ -72,9 +71,7 @@ Queries data from the specified table in the database with optional filters and 
 1. **Simple Query**:
 
 GET /query?table=CVE&page=1&per_page=10
-[http://127.0.0.1:5000/query?table=CVE&page=1&per_page=100](http://127.0.0.1:5000/query?table=CVE&page=1&per_page=100)
-
-
+[GET /query?table=CVE&page=1&per_page=10](http://127.0.0.1:5000/query?table=CVE&page=1&per_page=100)
 
 
 2. **Equality Filter**:
@@ -86,10 +83,13 @@ GET /query?table=CVE&vulnstatus=Modified&page=1&per_page=10
 
 ### 2. Retrieve Data by Specific Parameter (Product_ID)
 
+#### URL
+[GET /Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E](http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E)
+
+
 ### Sample Request
 ```bash
-`GET /Product_ID=<uuid:cpename_id>`
-`http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E`
+http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E
 ```
 
 ### Description
@@ -97,12 +97,6 @@ Retrieves data based on the specified CPE ID.
 
 ### Parameters
 - `Product_ID` (UUID, required): The ID of the CPE to retrieve.
-
-### Sample Request
-```bash
-GET /Product_ID=bae41d20-d4af-4af0-aa7d-3bd04da402a7
-http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E
-```
 
 ### Sample Answer
 
