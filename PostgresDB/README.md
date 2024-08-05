@@ -12,7 +12,7 @@ This part includes:
 - [Data Model Explanation](#data-model-explanation)
 - [Columns and Tables Explanation](#columns-and-tables-explanation)
 - [Data Model Diagram](#data-model-diagram)
-- DDL Statements
+- [DDL Statements](#ddl-statements)
 
 ## Introduction
 This README file provides a comprehensive overview of the vulnerability management database, including ETL design, data model, and detailed explanation of tables and columns. This database is designed to store information about Common Vulnerabilities and Exposures (CVEs), their descriptions, related metrics, configurations, and other relevant data.
