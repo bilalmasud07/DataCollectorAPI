@@ -1,12 +1,13 @@
 from flask import jsonify, Response, request
 from app.models import CVE, CVSSMetric, CpeMatch, Nodes, Configurations, SourceType, Matches, MatchString, CPE, Titles, Descriptions, Weaknesses, WeaknessesDescriptions
 import logging
-from sqlalchemy.sql import text
+#from sqlalchemy.sql import text
 from datetime import datetime, timezone
 import json
 from sqlalchemy import func
 from collections import defaultdict
 from uuid import UUID
+from app import cache
 
 # Get the current UTC time with timezone awareness
 current_utc_time = datetime.now(timezone.utc)
@@ -28,6 +29,7 @@ def register_routes(app, db):
     def index():
         return jsonify({"message": "Welcome to the CVE API!"}), 200
 
+    @cache.cached(timeout=60, key_prefix='cpe_%s')
     @app.route('/Product_ID=<uuid:cpename_id>', methods=['GET'])
     def get_cpe(cpename_id):
         try:
