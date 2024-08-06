@@ -13,31 +13,49 @@ This README file provides a comprehensive overview of the RestApi, including how
 
 
 ## How to Setup and Use the API
-In order to setup and use the API follow these steps:
 
-comment out below commands where necessary
+In order to set up and use the API, follow these steps:
 
-1- Go to the directory cd ../DataCollectorAPI/FlaskApi/ 
+1. Go to the directory:
+    ```bash
+    cd ../DataCollectorAPI/FlaskApi/
+    ```
 
-2- Create a .env file inside that directory and write below line
-DATABASE_URL='postgresql+psycopg://username:password@localhost:5432/database_name'
+2. Create a `.env` file inside that directory and add the following line:
+    ```
+    DATABASE_URL='postgresql+psycopg://username:password@localhost:5432/database_name'
+    ```
+    Replace `username`, `password`, and `database_name` with your actual PostgreSQL credentials and database name.
 
-replace then your username, passowrd, database name which you have set in part two
+3. Create a virtual environment:
+    ```bash
+    python -m venv venv
+    ```
+    This command creates a new virtual environment named `venv` in your project directory.
 
-explain what below command does
-2- python -m venv venv 
+4. Activate the virtual environment:
+    ```bash
+    .\venv\Scripts\Activate
+    ```
+    This command activates the virtual environment, allowing you to install packages and run the app in an isolated environment.
 
-explain what below command does
-3- .\venv\Scripts\Activate   # fow windows 11 on cmd
+5. Upgrade pip:
+    ```bash
+    python.exe -m pip install --upgrade pip
+    ```
+    This command upgrades pip, the Python package installer, to the latest version.
 
-4- python.exe -m pip install --upgrade pip 
+6. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    This command installs all the dependencies listed in the `requirements.txt` file.
 
-explain what below command does
-5- pip install -r requirements.txt 
-
-explain what below command does
-6- python .\app.py
-
+7. Run the application:
+    ```bash
+    python .\app.py
+    ```
+    This command starts the Flask application.
 
 
 ## API Documentation
