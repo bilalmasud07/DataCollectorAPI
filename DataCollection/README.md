@@ -30,8 +30,9 @@ Follow the steps below to run DataCollection scripts (total 3):
        `https://services.nvd.nist.gov/rest/json/cpematch/2.0`
 
 5. **Run the First Script**:
-   - Open a terminal in the editor, go to the directory `.../DataCollectorAPI/DataCollection/`, and run the first script named `cves_data_retrieval.py` to retrieve data about CVEs:
+   - Open a terminal in the editor, go to the directory `.../DataCollectorAPI/DataCollection/`, and install first all requirement then run the first script named `cves_data_retrieval.py` to retrieve data about CVEs:
      ```sh
+     pip install -r requirements.txt  
      python ./cves_data_retrieval.py
      ```
    - After running the script, it will log all activities in the file `.../DataCollectorAPI/DataCollection/logs/data_retrieval_cves_{current_timestamp}.log`. The script collects data in chunks and processes it into CSV files under the directory specified in `.../DataCollectorAPI/DataCollection/config/cve_conf.py`. Each CSV file represents a table, with attributes defined in the `cve_conf.py` file.
