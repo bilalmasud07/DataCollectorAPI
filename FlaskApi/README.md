@@ -83,8 +83,10 @@ Queries data from the specified table in the database with optional filters and 
 - Additional query parameter can be used as filters. Supported operator:
   - `=` for equality (e.g., `column=value`)
 
+##### Note: use the 
 
-##### Sample Requests
+**Note**: Please use the table names exactly how its defined in the model.py file.
+
 
 1. **Simple Query**:
 [GET /query?table=CVE&page=1&per_page=10](http://127.0.0.1:5000/query?table=CVE&page=1&per_page=100)
