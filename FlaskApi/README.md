@@ -3,7 +3,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [How to Setup/ Use the API](#how-to-setup/-use-the-api)
+- [How to Setup and Use the API](#how-to-setup-and-use-the-api)
 - [API Documentation](#api-documentation)
 - [Explanation of Code Logic](#explanation-of-code-logic)
 
