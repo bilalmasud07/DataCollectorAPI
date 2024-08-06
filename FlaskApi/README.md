@@ -12,7 +12,7 @@
 This README file provides a comprehensive overview of the RestApi, including how to set up and use the API, including starting the server and making requests. API Documentation: Document your API’s endpoints, including request methods, parameters, and sample responses.
 
 
-## How to Setup/ Use the API
+## How to Setup and Use the API
 In order to setup and use the API follow these steps:
 
 comment out below commands where necessary
