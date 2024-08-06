@@ -47,11 +47,8 @@ def process_cve_data(cve_data):
             cvss_metric_id = generate_uuid()
             source_type_id = generate_uuid()
             cvss_metric_rows.append([
-                    #generate_uuid(),
                     cvss_metric_id,
                     cve['id'],
-                    #metric['source'],
-                    #metric['type'],
                     source_type_id,
                     cvss['version'],
                     metric['exploitabilityScore'],
