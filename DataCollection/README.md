@@ -23,14 +23,24 @@ Follow the steps below to run DataCollection scripts (total 3):
 4. **Scripts to Run**:
    - There are 3 scripts to run to fetch data from the APIs. The APIs used are:
      - The CVE API is used to easily retrieve information on a single CVE or a collection of CVEs from the NVD.
-       `https://services.nvd.nist.gov/rest/json/cves/2.0`
+       
+       ```sh
+       https://services.nvd.nist.gov/rest/json/cves/2.0
+       ```
      - The CPE API is used to easily retrieve information on a single CPE record or a collection of CPE records from the Official CPE Dictionary.
-       `https://services.nvd.nist.gov/rest/json/cpes/2.0`
+       
+       ```sh
+       https://services.nvd.nist.gov/rest/json/cpes/2.0
+       ```
      - The CPE Match Criteria API is used to easily retrieve the complete list of valid CPE Match Strings.
-       `https://services.nvd.nist.gov/rest/json/cpematch/2.0`
+       
+       ```sh
+       https://services.nvd.nist.gov/rest/json/cpematch/2.0
+       ```
 
 5. **Run the First Script**:
    - Open a terminal in the editor, go to the directory `.../DataCollectorAPI/DataCollection/`, and install first all requirement then run the first script named `cves_data_retrieval.py` to retrieve data about CVEs:
+     
      ```sh
      pip install -r requirements.txt  
      python ./cves_data_retrieval.py
@@ -39,6 +49,7 @@ Follow the steps below to run DataCollection scripts (total 3):
 
 6. **Run the Second Script**:
    - Change the current directory path in the terminal to `.../DataCollectorAPI/DataCollection/` and run the second script named `cpes_data_retrieval.py` to retrieve data about CPEs:
+     
      ```sh
      python ./cpes_data_retrieval.py
      ```
@@ -46,6 +57,7 @@ Follow the steps below to run DataCollection scripts (total 3):
 
 7. **Run the Third Script**:
    - Change the current directory path in the terminal to `.../DataCollectorAPI/DataCollection/` and run the third script named `cpe_match_data_retrieval.py` to retrieve data about valid CPE Match Strings:
+     
      ```sh
      python ./cpe_match_data_retrieval.py
      ```
