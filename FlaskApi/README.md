@@ -40,24 +40,24 @@ explain what below command does
 
 
 
-# API Documentation
+## API Documentation
 
-## Overview
+### Overview
 
 This API allows querying data stored in the database with flexible filtering, pagination, and sorting capabilities. It supports various operators for filtering and handles pagination efficiently.
 
-## Endpoints
+### Endpoints
 
-### 1. Query Data from Database
+#### 1. Query Data from Database
 
-#### URL
+##### URL
 [GET /query](http://127.0.0.1:5000/query?table=CVE&page=1&per_page=100)
 
-#### Description
+##### Description
 
 Queries data from the specified table in the database with optional filters and pagination.
 
-#### Parameters
+##### Parameters
 
 - `table` (string, required): The name of the table to query.
 - `page` (integer, optional): The page number for pagination. Default is 1.
@@ -66,7 +66,7 @@ Queries data from the specified table in the database with optional filters and 
   - `=` for equality (e.g., `column=value`)
 
 
-#### Sample Requests
+##### Sample Requests
 
 1. **Simple Query**:
 [GET /query?table=CVE&page=1&per_page=10](http://127.0.0.1:5000/query?table=CVE&page=1&per_page=100)
@@ -77,24 +77,24 @@ Queries data from the specified table in the database with optional filters and 
 
 
 
-### 2. Retrieve Data by Specific Parameter (Product_ID)
+#### 2. Retrieve Data by Specific Parameter (Product_ID)
 
-#### URL
+##### URL
 [GET /Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E](http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E)
 
 
-### Sample Request
+#### Sample Request
 ```bash
 http://127.0.0.1:5000/Product_ID=A132CA24-0C21-4D60-BB30-98ACD8D15D6E
 ```
 
-### Description
+#### Description
 Retrieves data based on the specified Product ID.
 
-### Parameters
+#### Parameters
 - `Product_ID` (UUID, required): The ID of the CPE to retrieve.
 
-### Sample Answer
+#### Sample Answer
 
 ```json
 {
@@ -122,25 +122,25 @@ Retrieves data based on the specified Product ID.
 ```
 
 
-## 3. Analytical Questions
+### 3. Analytical Questions
 
-### For all the analytical quetions data is not being used which is collected after 05-01-2024. 
+#### For all the analytical quetions data is not being used which is collected after 05-01-2024. 
 
-### 3.1 Severity Distribution
+#### 3.1 Severity Distribution
 
-#### URL
+##### URL
 [GET /severity_distribution](http://127.0.0.1:5000/severity_distribution)
 
 
-#### Description
+##### Description
 Provides the count of vulnerabilities for different severity levels.
 
-#### Sample Request
+##### Sample Request
 ```bash
 http://127.0.0.1:5000/severity_distribution
 ```
 
-### Sample Answer
+##### Sample Answer
 
 ```json
 [
@@ -163,20 +163,20 @@ http://127.0.0.1:5000/severity_distribution
 ]
 ```
 
-### 3.2 Worst Products and Platforms
-#### URL
+#### 3.2 Worst Products and Platforms
+##### URL
 [GET /worst_products_platforms](http://127.0.0.1:5000/worst_products_platforms)
 
 
-#### Description
+##### Description
 Finds out the worst products and platforms with the most number of known vulnerabilities.
 
-#### Sample Request
+##### Sample Request
 ```bash
 http://127.0.0.1:5000/worst_products_platforms
 ```
 
-### Sample Answer
+##### Sample Answer
 
 ```json
 [
@@ -224,20 +224,20 @@ http://127.0.0.1:5000/worst_products_platforms
 ```
 
 
-### 3.3 Top 10 Vulnerabilities with the Highest Impact
-#### URL
+#### 3.3 Top 10 Vulnerabilities with the Highest Impact
+##### URL
 [GET /top_vulnerabilities_highest_impact](http://127.0.0.1:5000/top_vulnerabilities_highest_impact)
 
 
-#### Description
+##### Description
 Lists the top 10 vulnerabilities that have the highest impact.
 
-#### Sample Request
+##### Sample Request
 ```bash
 http://127.0.0.1:5000/top_vulnerabilities_highest_impact
 ```
 
-### Sample Answer
+##### Sample Answer
 
 ```json
 [
@@ -285,20 +285,20 @@ http://127.0.0.1:5000/top_vulnerabilities_highest_impact
 ```
 
 
-### 3.4 Top 10 Vulnerabilities with the Highest Impact
-#### URL
+#### 3.4 Top 10 Vulnerabilities with the Highest Impact
+##### URL
 [GET /top_vulnerabilities_highest_exploitability](http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability)
 
 
-#### Description
+##### Description
 Lists the top 10 vulnerabilities that have the highest impact.
 
-#### Sample Request
+##### Sample Request
 ```bash
 http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability
 ```
 
-### Sample Answer
+#### Sample Answer
 
 
 ```json
@@ -347,20 +347,20 @@ http://127.0.0.1:5000/top_vulnerabilities_highest_exploitability
 ```
 
 
-### 3.5 Top 10 Attack Vectors Used
-#### URL
+#### 3.5 Top 10 Attack Vectors Used
+##### URL
 [GET /top_attack_vectors](http://127.0.0.1:5000/top_attack_vectors)
 
 
-#### Description
+##### Description
 Lists the top 10 attack vectors used.
 
-#### Sample Request
+##### Sample Request
 ```bash
 http://127.0.0.1:5000/top_attack_vectors
 ```
 
-### Sample Answer
+##### Sample Answer
 
 ```json
 [
@@ -384,24 +384,24 @@ http://127.0.0.1:5000/top_attack_vectors
 ```
 
 
-## 4. Match Strings by Criteria ID
+#### 4. Match Strings by Criteria ID
 
-### URL
+##### URL
 [GET /match_strings/DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34](http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34)
 
-#### Description
+##### Description
 Retrieves match strings based on the specified match criteria ID.
 
-#### Parameters
+##### Parameters
 matchCriteriaId (UUID, required): The match criteria ID to retrieve.
 
 
-#### Sample Request
+##### Sample Request
 ```bash
 http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34
 ```
 
-### Sample Answer
+##### Sample Answer
 ```json
 {
     "totalResults": 1,
@@ -430,7 +430,7 @@ http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34
 ```
 
 
-## 5 Explanation of Code Logic
+## Explanation of Code Logic
 
 This project is a Flask-based API designed to provide detailed information about Common Vulnerabilities and Exposures (CVEs). It uses SQLAlchemy for database interactions, Flask-Caching for caching, and various other utilities to enhance the functionality and performance of the API.
 
@@ -446,7 +446,7 @@ The project is organized as follows:
   - **config.py**: Configuration settings for the application.
 
 
-## Code Explanation
+### Code Explanation
 
 ### app.py
 
