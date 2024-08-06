@@ -5,7 +5,7 @@
 - [Introduction](#introduction)
 - [How to Setup/ Use the API](#how-to-setup/-use-the-api)
 - [API Documentation](#api-documentation)
-- 
+- [Explanation of Code Logic](#explanation-of-code-logic)
 
 
 ## Introduction
@@ -428,3 +428,38 @@ http://127.0.0.1:5000/matchCriteriaId=DD38B1D2-5860-4CE2-A33F-BAF27C2F3B34
     ]
 }
 ```
+
+
+## 5 Explanation of Code Logic
+
+This project is a Flask-based API designed to provide detailed information about Common Vulnerabilities and Exposures (CVEs). It uses SQLAlchemy for database interactions, Flask-Caching for caching, and various other utilities to enhance the functionality and performance of the API.
+
+### Project Structure
+
+The project is organized as follows:
+
+- **app.py**: Entry point of the Flask application.
+- **app/**: Contains application-related code.
+  - **routes/**: Contains the route definitions.
+  - **models/**: Contains the SQLAlchemy models.
+  - **\_\_init\_\_.py**: Initializes the Flask application.
+  - **config.py**: Configuration settings for the application.
+
+
+## Code Explanation
+
+### app.py
+
+```python
+from app import create_app
+
+app = create_app()
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+```
+
+This is the main entry point of the application. It imports and creates an instance of the Flask application and runs it in debug mode if executed directly.
+
+
