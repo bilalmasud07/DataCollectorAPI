@@ -238,8 +238,9 @@ COPY CVE(cve_id, sourceIdentifier, published, lastModified, vulnStatus)
 FROM 'path/to/cve.csv' DELIMITER '|' CSV HEADER;
 
 COPY Descriptions(id, cve_id, lang, value) 
-FROM 'D:/Study/Job/Cybercube/DataCollection/cve_csv_data/descriptions.csv' DELIMITER '|' CSV HEADER;
+FROM 'path/to/descriptions.csv' DELIMITER '|' CSV HEADER;
 
+....
 ``` 
 
 
