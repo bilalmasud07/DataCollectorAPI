@@ -463,3 +463,221 @@ if __name__ == "__main__":
 This is the main entry point of the application. It imports and creates an instance of the Flask application and runs it in debug mode if executed directly.
 
 
+### app/__init__.py
+
+```python
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_caching import Cache
+from app.config import Config
+import logging
+import os
+from dotenv import load_dotenv
+from datetime import datetime, timezone
+
+db = SQLAlchemy()
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+
+def create_app():
+    load_dotenv()  # Load environment variables from .env file
+    
+    here = os.path.abspath(os.path.dirname(__file__))
+    parent_directory = os.path.dirname(here)
+
+    # Get current UTC time
+    current_utc_time = datetime.now(timezone.utc)
+    formatted_time = current_utc_time.strftime('%Y%m%d')
+
+    # Define log file path
+    logfile_name = f"Vuln_app_{formatted_time}.log"
+    logfile_path = os.path.join(parent_directory, 'logs', logfile_name)
+
+    # Initialize logging
+    logging.basicConfig(
+        filename=logfile_path, level=logging.INFO, 
+        format='%(asctime)s:%(levelname)s:%(message)s'
+    )
+    log = logging.getLogger(__name__)
+    
+    app = Flask(__name__)
+    app.config.from_object(Config)
+
+    db.init_app(app)
+    cache.init_app(app)
+    
+    with app.app_context():
+        from app.routes import register_routes
+        register_routes(app, db)
+
+    return app
+
+```
+This file initializes the Flask application. It sets up logging, loads environment variables, and registers routes.
+
+
+### app/config.py
+
+```python
+import os
+from dotenv import load_dotenv
+
+# Explicitly specify the path to the .env file
+env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+load_dotenv(dotenv_path=env_path)
+
+class Config:
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URI')
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SECRET_KEY = os.getenv('SECRET_KEY') or 'you-will-never-guess'
+
+```
+This file contains the configuration settings for the Flask application, including database URI and secret key.
+
+
+### app/models.py
+
+```python
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.dialects.postgresql import UUID
+
+db = SQLAlchemy()
+
+class CVE(db.Model):
+    __tablename__ = 'cve'
+    cve_id = db.Column(db.String(255), primary_key=True)
+    sourceidentifier = db.Column(db.String(255), nullable=False)
+    published = db.Column(db.TIMESTAMP, nullable=False)
+    lastmodified = db.Column(db.TIMESTAMP, nullable=False)
+    vulnstatus = db.Column(db.String(255), nullable=False)
+
+# Other models follow similar structure
+
+```
+This file defines the SQLAlchemy models representing the database schema.
+
+
+### app/routes.py
+
+```python
+from flask import jsonify, Response, request
+from app.models import CVE, CVSSMetric, CpeMatch, Nodes, Configurations, SourceType, Matches, MatchString, CPE, Titles, Descriptions, Weaknesses, WeaknessesDescriptions
+import logging
+from datetime import datetime, timezone
+import json
+from sqlalchemy import func, and_
+from collections import defaultdict
+from uuid import UUID
+from app import cache
+
+# Custom JSON Encoder to handle datetime and UUID
+class CustomJSONEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        elif isinstance(obj, UUID):
+            return str(obj)
+        return super().default(obj)
+
+def register_routes(app, db):
+    @app.route('/', methods=['GET'])
+    def index():
+        return jsonify({"message": "Welcome to the CVE API!"}), 200
+
+    @cache.cached(timeout=60, key_prefix='cpe_%s')
+    @app.route('/Product_ID=<uuid:cpename_id>', methods=['GET'])
+    def get_cpe(cpename_id):
+        try:
+            # Query to join necessary tables
+            cpe_data = db.session.query(
+                CPE,
+                Titles
+            ).outerjoin(Titles, Titles.cpenameid == CPE.cpenameid)\
+            .filter(CPE.cpenameid == cpename_id)\
+            .all()
+            logging.info(f"cpe_data: {cpe_data}")
+            if not cpe_data:
+                return jsonify({"error": f"CPE with ID {cpename_id} not found."}), 404
+
+            # Create the cpe object
+            cpe = cpe_data[0][0]
+            titles = [title for cpe, title in cpe_data if title]
+
+            data = {
+                "totalResults": len(cpe_data),
+                "format": "NVD_CPE",
+                "version": "2.0",
+                "timestamp": formatted_time,
+                "products": [
+                    {
+                        "cpe": {
+                            "deprecated": cpe.deprecated,
+                            "cpeName": cpe.cpename,
+                            "cpeNameid": str(cpe.cpenameid).upper(),
+                            "lastModified": cpe.lastmodified.isoformat(timespec='milliseconds') if cpe.lastmodified else None,
+                            "created": cpe.created.isoformat(timespec='milliseconds') if cpe.created else None,
+                            "titles": [
+                                {"title": title.title} for title in titles
+                            ]
+                        }
+                    }
+                ]
+            }
+            response = Response(json.dumps(data), mimetype='application/json')
+            return response, 200
+        except Exception as e:
+            logging.error(f"Error in get_cpe: {e}")
+            return jsonify({"error": "Internal Server Error"}), 500
+
+    # Similar structure for other routes
+    @cache.cached(timeout=60, key_prefix='cve_%s')
+    @app.route('/CVE_ID=<string:cveid>', methods=['GET'])
+    def get_cve(cveid):
+        # Code for handling CVE details
+
+    @cache.cached(timeout=60)
+    @app.route('/severity_distribution', methods=['GET'])
+    def severity_distribution():
+        # Code for handling severity distribution
+
+    @cache.cached(timeout=60)
+    @app.route('/worst_products_platforms', methods=['GET'])
+    def worst_products_platforms():
+        # Code for handling worst products platforms
+
+    @cache.cached(timeout=60)
+    @app.route('/top_vulnerabilities_highest_impact', methods=['GET'])
+    def top_vulnerabilities_highest_impact():
+        # Code for handling top vulnerabilities with highest impact
+
+    @cache.cached(timeout=60)
+    @app.route('/top_vulnerabilities_highest_exploitability', methods=['GET'])
+    def top_vulnerabilities_highest_exploitability():
+        # Code for handling top vulnerabilities with highest exploitability
+
+    @app.route('/top_attack_vectors', methods=['GET'])
+    def top_attack_vectors():
+        # Code for handling top attack vectors
+
+    @app.route('/matchCriteriaId=<uuid:matchcriteriaid>', methods=['GET'])
+    def match_strings(matchcriteriaid):
+        # Code for handling match strings
+
+    @app.route('/query', methods=['GET'])
+    def query_database():
+        # Code for handling custom database queries
+
+    logging.info("Routes have been registered successfully.")
+
+
+```
+
+This file defines the routes for the Flask application. Each route handles specific endpoints and provides relevant data in JSON format.
+
+
+## Comments
+- Ensure that the .env file is correctly set up with the necessary environment variables such as DATABASE_URI.
+- The logging setup in \_\_init\_\_.py ensures that all logs are saved in a structured manner with timestamps.
+- Caching is used extensively to improve the performance of the API by storing responses for a specified duration.
+
+# Conclusion
+This Flask API provides comprehensive data on CVEs, leveraging SQLAlchemy for database interactions and Flask-Caching for performance optimization. The project is well-structured and modular, making it easy to maintain and extend.
